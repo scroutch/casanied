@@ -15,6 +15,7 @@
         </ul>
     </nav>
     <div id="langage">
-        <img src="assets/img/icons/german_flag.png" alt="icone de l'allemagne">
+        <img src="assets/img/icons/germanFlag.png" alt="icone de l'allemagne" class="germanFlag active">
+        <img src="assets/img/icons/frenchFlag.png" alt="icone de la france" class="frenchFlag">
     </div>
 </header>
