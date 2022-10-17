@@ -1,1 +1,167 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@500&display=swap");
+
+:root {
+    --main-color: #ff6500;
+    --secondary-color: #016450;
+    --text-color: #212121;
+    --grey-color: #999999;
+    --font-title: "Oswald", sans-serif;
+    --font-text: "Montserrat", sans-serif;
+    --font-size-title: 1.8rem;
+    --font-size-text: 1rem;
+}
+
+/***GENERAL***/
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:visited {
+    color: var(--secondary-color);
+}
+
+body {
+    font-family: var(--font-text);
+}
+
+/***HEADER***/
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+header .nav-toggler {
+    display: none;
+}
+
+header > img {
+    width: 7%;
+}
+
+header nav {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header .menu-item {
+    padding: 0 1rem;
+}
+
+header a:hover {
+    color: var(--secondary-color);
+}
+
+/******MEDIA QUERIES******/
+
+/***HEADER***/
+
+@media screen and (max-width: 900px) {
+    header .nav-toggler {
+        display: block;
+        z-index: 1000;
+        height: 50px;
+        width: 40px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: transparent;
+    }
+
+    header .nav-toggler .line {
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: var(--text-color);
+        transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+    }
+
+    header .nav-toggler .l1 {
+        transform: translateY(-10px);
+    }
+
+    header .nav-toggler .l3 {
+        transform: translateY(10px);
+    }
+
+    header .nav-toggler.active .l1 {
+        transform: translateY(0px) rotate(135deg);
+    }
+
+    header .nav-toggler.active .l2 {
+        opacity: 0;
+    }
+
+    header .nav-toggler.active .l3 {
+        transform: translateY(0px) rotate(-135deg);
+    }
+
+    header nav {
+        position: fixed;
+        width: 100%;
+        min-height: 100vh;
+        right: 0;
+        top: 75px;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+        border-left: 3px solid var(--main-color);
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+        font-size: var(--font-size-text);
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav.active {
+        transform: translate(0);
+    }
+
+    header nav a {
+        color: #f1f1f1;
+        font-size: var(--font-size-title);
+        display: block;
+    }
+
+    header nav a:hover {
+        color: var(--main-color);
+    }
+
+    header nav a:visited {
+        color: var(--main-color);
+    }
+
+    header .itemsmenu li {
+        letter-spacing: 3px;
+        font-weight: 600;
+        padding-right: 30px;
+        margin-top: 3rem;
+    }
+
+    header .menu-item {
+        font-family: var(--font-text);
+        font-size: var(--font-size-text);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header > img {
+        width: 15%;
+    }
+}
