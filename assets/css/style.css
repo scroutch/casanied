@@ -22,8 +22,13 @@ a:visited {
     color: var(--secondary-color);
 }
 
+a:hover {
+    color: var(--secondary-color);
+}
+
 body {
     font-family: var(--font-text);
+    font-size: var(--font-size-text);
 }
 
 /***HEADER***/
@@ -44,7 +49,7 @@ header .nav-toggler {
 }
 
 header > img {
-    width: 7%;
+    width: 50px;
 }
 
 header nav {
@@ -61,8 +66,66 @@ header .menu-item {
     padding: 0 1rem;
 }
 
-header a:hover {
+header .frenchFlag {
+    width: 37px;
+    height: 37px;
+}
+
+header .frenchFlag,
+header .germanFlag {
+    display: none;
+}
+
+header .frenchFlag.active,
+header .germanFlag.active {
+    display: block;
+}
+
+/***FOOTER***/
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+}
+
+footer .block-footer {
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid var(--main-color);
+}
+
+footer .block-footer a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+}
+
+footer .icons .svg-inline--fa {
+    height: 2.5rem;
+    padding: 0 1rem;
     color: var(--secondary-color);
+}
+
+footer .nav-footer {
+    width: 100%;
+    border-top: 1px solid var(--main-color);
+}
+
+footer .nav-footer ul {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .nav-footer ul li {
+    padding-left: 1rem;
 }
 
 /******MEDIA QUERIES******/
@@ -161,7 +224,11 @@ header a:hover {
 }
 
 @media screen and (max-width: 400px) {
-    header > img {
-        width: 15%;
+    footer .nav-footer {
+        font-size: 0.5rem;
+    }
+
+    footer .nav-footer ul li {
+        padding-left: 0.4rem;
     }
 }
