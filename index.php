@@ -21,9 +21,10 @@ include('pages/bdd.php');
 </head>
 
 <body>
+    <header>
+        <?php include('pages/header.php'); ?>
+    </header>
     <?php
-
-    include('pages/header.php');
 
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
@@ -37,17 +38,15 @@ include('pages/bdd.php');
             include('pages/estimation.php');
         } else if ($page == 5) {
             include('pages/contact.php');
-        } else if ($page == 6) {
-            include('pages/home.php');
-        } else if ($page == 7) {
-            include('pages/home.php');
         }
     } else {
         include('pages/home.php');
     }
 
-    include('pages/footer.php');
     ?>
+    <footer>
+        <?php include('pages/footer.php'); ?>
+    </footer>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="./assets/bootstrap-5.2.2/js/bootstrap.bundle.min.js"></script>
