@@ -24,26 +24,28 @@ include('pages/bdd.php');
     <header>
         <?php include('pages/header.php'); ?>
     </header>
-    <?php
+    <div class="container-fluid d-flex justify-content-evenly flex-wrap">
+        <?php
 
-    if (isset($_GET['page'])) {
-        $page = $_GET['page'];
-        if ($page == 1) {
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+            if ($page == 1) {
+                include('pages/home.php');
+            } else if ($page == 2) {
+                include('pages/location.php');
+            } else if ($page == 3) {
+                include('pages/vente.php');
+            } else if ($page == 4) {
+                include('pages/estimation.php');
+            } else if ($page == 5) {
+                include('pages/contact.php');
+            }
+        } else {
             include('pages/home.php');
-        } else if ($page == 2) {
-            include('pages/location.php');
-        } else if ($page == 3) {
-            include('pages/vente.php');
-        } else if ($page == 4) {
-            include('pages/estimation.php');
-        } else if ($page == 5) {
-            include('pages/contact.php');
         }
-    } else {
-        include('pages/home.php');
-    }
 
-    ?>
+        ?>
+    </div>
     <footer>
         <?php include('pages/footer.php'); ?>
     </footer>
