@@ -30,6 +30,8 @@ body {
     font-family: var(--font-text);
     font-size: var(--font-size-text);
     background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
 }
 
 /***HEADER***/
@@ -82,7 +84,7 @@ header .germanFlag.active {
 /***FOOTER***/
 
 footer {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     height: 150px;
     bottom: 0;
@@ -151,12 +153,54 @@ footer .nav-footer ul li {
 
 /***CONTAINER***/
 
-.container-fluid {
-    width: 100%;
-    position: absolute;
-    top: 110px;
+/***ONGLETS***/
+.container-fluid.onglet {
+    height: 900px;
+    background: url("../img/maison2.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
+.container-onglets {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 425px;
+}
+
+.container-onglets .tab-header {
+    width: 100%;
+    display: flex;
+}
+
+.container-onglets .tab-header .tab-link {
+    width: calc(100% / 3);
+    border: none;
+    height: 102px;
+    color: #fff;
+    background-color: var(--grey-color);
+    font-size: 1.2rem;
+}
+
+.container-onglets .tab-header .tab-link.active {
+    background-color: var(--main-color);
+}
+
+.container-onglets .tab-header .tab-link:nth-child(1) {
+    border-radius: 20px 0 0 0;
+}
+
+.container-onglets .tab-header .tab-link:nth-child(3) {
+    border-radius: 0 20px 0 0;
+}
+
+.tab-body {
+    display: none;
+}
+
+.tab-body.active {
+    display: block;
+}
 /******MEDIA QUERIES******/
 
 /***HEADER***/

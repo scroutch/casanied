@@ -21,40 +21,35 @@ include('pages/bdd.php');
 </head>
 
 <body>
-    <header>
-        <?php include('pages/header.php'); ?>
-    </header>
-    <div class="container-fluid d-flex justify-content-evenly flex-wrap">
-        <?php
+    <?php
+    include('pages/header.php');
 
-        if (isset($_GET['page'])) {
-            $page = $_GET['page'];
-            if ($page == 1) {
-                include('pages/home.php');
-            } else if ($page == 2) {
-                include('pages/location.php');
-            } else if ($page == 3) {
-                include('pages/vente.php');
-            } else if ($page == 4) {
-                include('pages/estimation.php');
-            } else if ($page == 5) {
-                include('pages/contact.php');
-            }
-        } else {
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+        if ($page == 1) {
             include('pages/home.php');
+        } else if ($page == 2) {
+            include('pages/location.php');
+        } else if ($page == 3) {
+            include('pages/vente.php');
+        } else if ($page == 4) {
+            include('pages/estimation.php');
+        } else if ($page == 5) {
+            include('pages/contact.php');
         }
+    } else {
+        include('pages/home.php');
+    }
 
-        ?>
-    </div>
-    <footer>
-        <?php include('pages/footer.php'); ?>
-    </footer>
+    include('pages/footer.php');
+    ?>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="./assets/bootstrap-5.2.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
     <script src="assets/js/menuBurger.js"></script>
     <script src="assets/js/langage.js"></script>
+    <script src="assets/js/onglet.js"></script>
 </body>
 
 </html>
