@@ -23,7 +23,7 @@ a:visited {
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--main-color);
 }
 
 body {
@@ -32,6 +32,13 @@ body {
     background-color: #d9d9d9;
     display: flex;
     flex-direction: column;
+}
+
+h2 {
+    font-family: var(--font-title);
+    font-size: var(--font-size-title);
+    text-align: center;
+    padding: 2rem 0;
 }
 
 /***HEADER***/
@@ -166,6 +173,8 @@ footer .nav-footer ul li {
     flex-direction: column;
     width: 600px;
     height: 425px;
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
 }
 
 .container-onglets .tab-header {
@@ -198,9 +207,57 @@ footer .nav-footer ul li {
     display: none;
 }
 
-.tab-body.active {
-    display: block;
+.tab-body input[type="submit"] {
+    background-color: var(--main-color);
+    border: none;
+    color: #fff;
+    width: 340px;
+    height: 60px;
+    position: relative;
+    bottom: -40px;
 }
+
+.tab-body input {
+    border-radius: 10px;
+    border: solid 1px var(--grey-color);
+}
+
+.tab-body.active {
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#tab-body {
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tab-body .check {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-body .lieu,
+.tab-body .inputBudget {
+    width: 70%;
+}
+
+.tab-body .inputBudget {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-body .inputBudget .budget {
+    width: 48%;
+}
+
 /******MEDIA QUERIES******/
 
 /***HEADER***/
