@@ -7,26 +7,26 @@
         </div>
         <form action="" method="post" class="tab-body active" data-id="location">
             <p>3500 biens à louer</p>
-            <input type="text" class="lieu" name="lieu" placeholder="Quartier, Ville, ...">
+            <input type="text" class="lieu" name="lieu" placeholder="Quartier, Ville, code postal...">
             <div class="inputBudget">
                 <input type="text" class="budget" name="price" placeholder="Budget max">
                 <input type="text" class="budget" name="surface" placeholder="surface">
             </div>
             <div class="check">
                 <div>
-                    <input type="checkbox" name="type" id="maison" value="maison" checked>
+                    <input type="checkbox" name="type[]" id="maison" value="maison" checked>
                     <label for="maison">Maison</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="type" id="appartement" value="appartement">
+                    <input type="checkbox" name="type[]" id="appartement" value="appartement">
                     <label for="appartement">Appartement</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="type" id="terrain" value="terrain">
+                    <input type="checkbox" name="type[]" id="terrain" value="terrain">
                     <label for="terrain">Terrain</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="type" id="immeuble" value="immeuble">
+                    <input type="checkbox" name="type[]" id="immeuble" value="immeuble">
                     <label for="immeuble">Immeuble</label>
                 </div>
             </div>
@@ -56,9 +56,9 @@
             </div>
             <input type="submit" value="CHERCHER">
         </form>
-        <form action="" method="post" class="tab-body" data-id="vente">
+        <form action="index.php?page=1" method="post" class="tab-body" data-id="vente">
             <p>3500 biens à louer</p>
-            <input type="text" class="lieu" name="lieu" placeholder="Quartier, Ville, ...">
+            <input type="text" class="lieu" name="ville" placeholder="Ville, ...">
             <div class="inputBudget">
                 <input type="text" class="budget" name="price" placeholder="Budget max">
                 <input type="text" class="budget" name="surface" placeholder="surface">
