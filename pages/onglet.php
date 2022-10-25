@@ -58,7 +58,7 @@
         </form>
         <form action="index.php?page=1" method="post" class="tab-body" data-id="vente">
             <p>3500 biens à vendre</p>
-            <input type="text" class="lieu" name="ville" placeholder="Ville, ...">
+            <input type="text" class="lieu" name="ville" placeholder="Ville, ..." required>
             <div class="inputBudget">
                 <input type="text" class="budget" name="price" placeholder="Budget max">
                 <input type="text" class="budget" name="surface" placeholder="surface">
