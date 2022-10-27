@@ -1,6 +1,6 @@
 <?php
 
-var_dump($_POST);
+// var_dump($_POST);
 if ($_POST) {
     $ville = ucfirst($_POST['ville']);
     $price = $_POST['price'];
