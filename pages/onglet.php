@@ -5,7 +5,7 @@
             <button class="tab-link" data-ref="vente">Vente</button>
             <button class="tab-link" data-ref="estimation">Estimation</button>
         </div>
-        <form action="#" method="post" class="tab-body active" data-id="location">
+        <form action="index.php?page=1&category=1" method="post" class="tab-body active" data-id="location">
             <p>3500 biens à vendre</p>
             <input type="text" class="lieu" name="ville" placeholder="Ville, ..." required>
             <div class="inputBudget">
@@ -57,7 +57,7 @@
             </div>
             <input type="submit" value="CHERCHER">
         </form>
-        <form action="index.php?page=1" method="post" class="tab-body" data-id="vente">
+        <form action="index.php?page=1&category=2" method="post" class="tab-body" data-id="vente">
             <p>3500 biens à vendre</p>
             <input type="text" class="lieu" name="ville" placeholder="Ville, ..." required>
             <div class="inputBudget">
