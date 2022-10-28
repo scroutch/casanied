@@ -1,12 +1,12 @@
 <?php
-$queryVentes = 'SELECT * FROM product WHERE category_id = 2';
+$queryVentes = 'SELECT * FROM product WHERE category_id = 1';
 $req2 = $bdd->prepare($queryVentes);
 // $req2->bindValue(':category', $category, PDO::PARAM_INT);
 $req2->execute();
 var_dump($req2);
 
 ?>
-<h2>Nos dernières ventes</h2>
+<h2>Nos dernières locations</h2>
 <div class="container-fluid d-flex justify-content-evenly flex-wrap">
     <?php
 
