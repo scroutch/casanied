@@ -39,6 +39,7 @@ h2 {
     font-size: var(--font-size-title);
     text-align: center;
     padding: 2rem 0;
+    text-transform: capitalize;
 }
 
 /***HEADER***/
@@ -296,6 +297,37 @@ input[type="checkbox"].checkbox:checked::before {
 .forCheckbox label {
     padding-left: 5px;
 }
+
+/***CONTACT***/
+#contact {
+    margin-top: 100px;
+}
+
+#contact form {
+    width: 70%;
+}
+
+#contact .perso {
+    width: 100%;
+}
+
+#contact .perso input {
+    width: 48%;
+}
+
+#contact textarea,
+#contact .perso input {
+    padding: 1rem;
+    margin: 1rem;
+    border: none;
+}
+
+#contact textarea:focus,
+#contact .perso input:focus {
+    outline: none;
+    border: 2px solid var(--secondary-color);
+}
+
 /******MEDIA QUERIES******/
 
 /***HEADER***/
