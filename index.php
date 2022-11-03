@@ -14,7 +14,7 @@ include('pages/bdd.php');
     <link rel="stylesheet" href="./assets/fontawesome-free-6.2.0/css/all.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
     <script defer src="./assets/fontawesome-free-6.2.0/js/all.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo.png">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -48,10 +48,11 @@ include('pages/bdd.php');
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="./assets/bootstrap-5.2.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     <script src="assets/js/menuBurger.js"></script>
     <script src="assets/js/langage.js"></script>
     <script src="assets/js/onglet.js"></script>
+    <script src="assets/js/map.js"></script>
 </body>
 
 </html>

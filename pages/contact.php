@@ -10,7 +10,12 @@
             <input type="email" name="mail" id="mail" placeholder="Entrez votre email" required>
         </div>
         <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message" required></textarea>
-        <div class="g-recaptcha" data-sitekey="6LdOR78iAAAAAAHd2WHsNRc-CavtNBo5TCjJJYuQ"></div>
+        <div class="captcha d-flex justify-content-center align-items-center">
+            <div class="g-recaptcha" data-sitekey="6LdOR78iAAAAAAHd2WHsNRc-CavtNBo5TCjJJYuQ"></div>
+        </div>
+        <p>En envoyant ce formulaire, j’accepte que mes informations soient enregistrées puis utilisées par notre agence afin de répondre à ma demande. Consultez notre politique de confidentialité pour connaître vos droits.</p>
         <input type="submit" value="ENVOYER">
     </form>
+    <h2>Où nous-trouver? </h2>
+    <div id="map"></div>
 </div>

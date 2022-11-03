@@ -328,6 +328,37 @@ input[type="checkbox"].checkbox:checked::before {
     border: 2px solid var(--secondary-color);
 }
 
+#contact p {
+    margin: 3rem;
+}
+
+input[type="submit"] {
+    margin: 2rem auto;
+    width: 40%;
+    height: 50px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+/***CAPTCHA***/
+.captcha {
+    width: 35%;
+    height: 150px;
+    margin: 2rem auto;
+    border: 1px solid var(--main-color);
+}
+
+/***MAP***/
+
+#map {
+    height: 645px;
+    width: 95%;
+    margin: 3rem auto;
+    border: 2px solid var(--secondary-color);
+}
+
 /******MEDIA QUERIES******/
 
 /***HEADER***/
@@ -421,6 +452,10 @@ input[type="checkbox"].checkbox:checked::before {
         font-family: var(--font-text);
         font-size: var(--font-size-text);
     }
+
+    .captcha {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -430,5 +465,22 @@ input[type="checkbox"].checkbox:checked::before {
 
     footer .nav-footer ul li {
         padding-left: 0.4rem;
+    }
+
+    #contact form {
+        width: 100%;
+    }
+
+    #contact .perso {
+        flex-direction: column;
+    }
+
+    #contact .perso input {
+        width: 90%;
+    }
+
+    #contact textarea,
+    .captcha {
+        width: 90%;
     }
 }
