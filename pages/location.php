@@ -1,9 +1,11 @@
 <?php
+include('onglet.php');
+
 $queryVentes = 'SELECT * FROM product WHERE category_id = 1';
 $req2 = $bdd->prepare($queryVentes);
 // $req2->bindValue(':category', $category, PDO::PARAM_INT);
 $req2->execute();
-var_dump($req2);
+// var_dump($req2);
 
 ?>
 <h2>Nos dernières locations</h2>
