@@ -43,10 +43,10 @@ $data2 = $req2->fetch();
                     <label for="immeuble">Immeuble</label>
                 </div>
             </div>
-            <div class="d-flex flex-column align-items-center">
+            <div>
                 <label for="nb-bedroom">Nombre de chambre</label>
                 <select name="nb_bedroom" id="nb_bedroom">
-                    <option value="">--Please choose an option--</option>
+                    <option value="">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -98,7 +98,7 @@ $data2 = $req2->fetch();
             <div>
                 <label for="nb-bedroom">Nombre de chambre</label>
                 <select name="nb_bedroom" id="nb_bedroom">
-                    <option value="">--Please choose an option--</option>
+                    <option value="">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
