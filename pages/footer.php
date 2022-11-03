@@ -1,4 +1,4 @@
-<footer>
+<footer class="mt-5">
     <div class="block-footer">
         <div class="icons">
             <i class="fa-regular fa-envelope"></i>
