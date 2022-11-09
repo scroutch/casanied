@@ -39,7 +39,7 @@ session_unset();
 		<div class="row">
 			<div class="col-6 mx-auto mt-5">
 				<form method="POST" action="traitement.php">
-					<h1 class="text-center mb-5">BO_Project connexion</h1>
+					<h1 class="text-center mb-5">Accès panel admin</h1>
 					<div class="mb-3 row">
 						<label for="email" class="col-2 col-form-label">Username</label>
 						<div class="col-10">
