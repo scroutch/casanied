@@ -41,7 +41,7 @@ session_unset();
 				<form method="POST" action="traitement.php">
 					<h1 class="text-center mb-5">Accès panel admin</h1>
 					<div class="mb-3 row">
-						<label for="email" class="col-2 col-form-label">Username</label>
+						<label for="email" class="col-2 col-form-label">Email</label>
 						<div class="col-10">
 							<input type="email" class="form-control" id="email" name="email">
 						</div>
