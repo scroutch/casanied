@@ -66,7 +66,7 @@ include('../pages/bdd.php'); //(chemin à adapter)
 					<li class="nav-item">
 						<a href="admin.php?page=5" class="nav-link">
 							<i class="link-icon" data-feather="box"></i>
-							<span class="link-title">Users</span>
+							<span class="link-title">Collaborateurs</span>
 						</a>
 					</li>
 					<!-- <li class="nav-item nav-category">web apps</li>
@@ -438,7 +438,9 @@ include('../pages/bdd.php'); //(chemin à adapter)
 					} elseif ($page == 4) {
 						include('pages/produits.php');
 					} elseif ($page == 5) {
-						include('pages/user.php');
+						include('pages/collab.php');
+					} elseif ($page == 6) {
+						include('pages/addCollab.php');
 					}
 				} else {
 					$_SESSION['message'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Vous n\'avez pas les droits pour accéder à cette zone</div>';
