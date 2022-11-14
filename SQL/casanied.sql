@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 09 nov. 2022 à 20:17
+-- Généré le : lun. 14 nov. 2022 à 18:39
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -30,17 +30,21 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `firstName` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `date_ajout` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `admin`
 --
 
-INSERT INTO `admin` (`id`, `email`, `password`) VALUES
-(1, 'greg@casanied.com', '$2y$10$xV6EtebCyQmO9txp7XYkxelInVB/7p5p65tuKwqflonuRKUZH3d0.');
+INSERT INTO `admin` (`id`, `name`, `firstName`, `email`, `password`, `date_ajout`) VALUES
+(1, 'mimo', 'greg', 'greg@casanied.com', '$2y$10$xV6EtebCyQmO9txp7XYkxelInVB/7p5p65tuKwqflonuRKUZH3d0.', '2022-11-14 12:26:35'),
+(2, 'test', 'test', 'test@test.com', '$2y$10$PWvOyTJYX8hRu4tuqXr4cu7X86Qp34jaqDt2A5Njd.hrxRPNg7gce', '2022-11-14 17:12:22');
 
 -- --------------------------------------------------------
 
@@ -77,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `tel` varchar(30) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `message` varchar(255) NOT NULL,
+  `date_envoi` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -84,8 +89,8 @@ CREATE TABLE IF NOT EXISTS `contact` (
 -- Déchargement des données de la table `contact`
 --
 
-INSERT INTO `contact` (`id`, `name`, `firstName`, `tel`, `mail`, `message`) VALUES
-(1, 'Duhain', 'Cécile', '0606060606', 'cecile@test.com', 'blablablabla');
+INSERT INTO `contact` (`id`, `name`, `firstName`, `tel`, `mail`, `message`, `date_envoi`) VALUES
+(1, 'Duhain', 'Cécile', '0606060606', 'cecile@test.com', 'blablablabla', '2022-11-11 12:18:23');
 
 -- --------------------------------------------------------
 
