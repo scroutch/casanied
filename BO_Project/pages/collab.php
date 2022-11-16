@@ -47,11 +47,11 @@
 
 
                                 <tr>
-                                    <th><?php echo $data['id'] ?></th>
-                                    <td><?php echo $data['name'] ?></td>
-                                    <td><?php echo $data['firstName'] ?></td>
-                                    <td><?php echo $data['email'] ?></td>
-                                    <td><?php echo $data['date_ajout'] ?></td>
+                                    <th><?php echo htmlspecialchars($data['id']) ?></th>
+                                    <td><?php echo htmlspecialchars($data['name']) ?></td>
+                                    <td><?php echo htmlspecialchars($data['firstName']) ?></td>
+                                    <td><?php echo htmlspecialchars($data['email']) ?></td>
+                                    <td><?php echo htmlspecialchars($data['date_ajout']) ?></td>
                                     <td>
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete">
