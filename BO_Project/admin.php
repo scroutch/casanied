@@ -254,6 +254,8 @@ include('../pages/bdd.php'); //(chemin à adapter)
 						include('pages/collab.php');
 					} elseif ($page == 6) {
 						include('pages/addCollab.php');
+					} elseif ($page == 7) {
+						include('pages/confirmDelete.php');
 					}
 				} else {
 					$_SESSION['message'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Vous n\'avez pas les droits pour accéder à cette zone</div>';
