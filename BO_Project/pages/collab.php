@@ -1,5 +1,6 @@
 <div class="row">
     <?php
+    $_SESSION['item'] = './pages/deleteCollab.php';
     if (isset($_SESSION['error'])) {
         echo $_SESSION['error'];
         unset($_SESSION['error']);

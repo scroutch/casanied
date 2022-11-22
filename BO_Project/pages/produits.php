@@ -1,5 +1,6 @@
 <div class="row">
     <?php
+    $_SESSION['item'] = './pages/deleteProduct.php';
     if (isset($_SESSION['error'])) {
         echo $_SESSION['error'];
         unset($_SESSION['error']);
@@ -11,7 +12,7 @@
         <div class="card">
             <div class="card-body">
                 <h6 class="card-title">Biens</h6>
-                <a href="admin.php?page=6">
+                <a href="admin.php?page=8">
                     <p class="card-description">Ajouter
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -85,10 +86,10 @@
                                                 <td><?php echo htmlspecialchars($data['nb_bathroom']) ?></td>
                                                 <td><?php echo htmlspecialchars($data['surface']) . ' m²' ?></td>
                                                 <td><?php echo htmlspecialchars($data['type_product']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['price']) ?></td>
+                                                <td><?php echo htmlspecialchars($data['price']) . ' €' ?></td>
                                                 <td><?php echo htmlspecialchars($data['created_date']) ?></td>
                                                 <td>
-                                                    <a href="#">
+                                                    <a href="admin.php?page=7&id=<?php echo htmlspecialchars($data['id']) ?>">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete">
                                                             <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
                                                             <line x1="18" y1="9" x2="12" y2="15"></line>
