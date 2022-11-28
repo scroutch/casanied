@@ -34,7 +34,7 @@
             <input type="number" class="form-control" id="nb_bedroom" name="nb_bedroom" autocomplete="off" required>
         </div>
         <div class="form-group">
-            <label for="nb_bathroom">Nombre de chambre</label>
+            <label for="nb_bathroom">Nombre de salle de bain</label>
             <input type="number" class="form-control" id="nb_bathroom" name="nb_bathroom" autocomplete="off" required>
         </div>
         <div class="form-group">
@@ -65,3 +65,6 @@
         <button class="btn btn-light">Annuler</button>
     </form>
 </div>
+<?php
+
+?>

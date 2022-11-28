@@ -4,24 +4,38 @@ include('bdd.php');
 
 var_dump($_POST);
 
-if ((isset($_POST['name']) && !empty($_POST['name'])) &&
-    (isset($_POST['firstName']) && !empty($_POST['firstName'])) &&
-    (isset($_POST['email']) && !empty($_POST['email'])) &&
-    (isset($_POST['password']) && !empty($_POST['password']))
+if ((isset($_POST['title']) && !empty($_POST['title'])) &&
+    (isset($_POST['img']) && !empty($_POST['img'])) &&
+    (isset($_POST['rue']) && !empty($_POST['rue'])) &&
+    (isset($_POST['cp']) && !empty($_POST['cp'])) &&
+    (isset($_POST['ville']) && !empty($_POST['ville'])) &&
+    (isset($_POST['nb_bedroom']) && !empty($_POST['nb_bedroom'])) &&
+    (isset($_POST['nb_bathroom']) && !empty($_POST['nb_bathroom'])) &&
+    (isset($_POST['surface']) && !empty($_POST['surface'])) &&
+    (isset($_POST['type_product']) && !empty($_POST['type_product'])) &&
+    (isset($_POST['price']) && !empty($_POST['price'])) &&
+    (isset($_POST['category']) && !empty($_POST['category'])) &&
 ) {
-
-    $name = htmlspecialchars($_POST['name']);
-    $firstName = htmlspecialchars($_POST['firstName']);
-    $email = htmlspecialchars($_POST['email']);
-
-    if ($_POST['password'] == $_POST['confirmPassword']) {
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    } else {
-        $_SESSION['error'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Les mots de passe ne correspondent pas</div>';
-        header('Location: ../admin.php?page=6');
+    if (isset($_FILES['img']['tmp_name'])) {
+        $retour = copy($_FILES['img']['tmp_name'], $_FILES['img']['name']);
+        if ($retour) {
+            echo '<p>La photo a bien été envoyée.</p>';
+            echo '<img src="' . $_FILES['img']['name'] . '">';
+        }
     }
 
-    $query = 'INSERT INTO admin (name, firstName, email, password) VALUES (:name, :firstName, :email, :password)';
+    $title = htmlspecialchars($_POST['title']);
+    $rue = htmlspecialchars($_POST['rue']);
+    $cp = htmlspecialchars($_POST['cp']);
+    $ville = htmlspecialchars($_POST['ville']);
+    $nb_bedroom = htmlspecialchars($_POST['nb_bedroom']);
+    $nb_bathroom = htmlspecialchars($_POST['nb_bathroom']);
+    $surface = htmlspecialchars($_POST['surface']);
+    $type_product = htmlspecialchars($_POST['type_product']);
+    $price = htmlspecialchars($_POST['price']);
+    $category = htmlspecialchars($_POST['category']);
+
+    $query = 'INSERT INTO product (name, firstName, email, password) VALUES (:name, :firstName, :email, :password)';
     $req = $bdd->prepare($query);
     $req->bindValue(':name', $name, PDO::PARAM_STR);
     $req->bindValue(':firstName', $firstName, PDO::PARAM_STR);
@@ -33,5 +47,5 @@ if ((isset($_POST['name']) && !empty($_POST['name'])) &&
     header('Location: ../admin.php?page=5');
 } else {
     $_SESSION['error'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Une erreur est survenue. Veuillez recommencer !</div>';
-    header('Location: ../admin.php?page=6');
+    header('Location: ../admin.php?page=5');
 }
