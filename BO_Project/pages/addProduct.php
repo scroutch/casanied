@@ -1,14 +1,15 @@
 <div class="row">
-    <?php
-    if (isset($_SESSION['error'])) {
-        echo $_SESSION['error'];
-        unset($_SESSION['error']);
-    }
-    ?>
+    <!-- <?php
+            // if (isset($_SESSION['error'])) {
+            //     echo $_SESSION['error'];
+            //     unset($_SESSION['error']);
+            // }
+            // 
+            ?> -->
 </div>
 <div class="card-body">
     <h6 class="card-title">Ajouter un bien</h6>
-    <form class="forms-sample" method="POST" action="./pages/target_collab.php" enctype="multipart/form-data">
+    <form class="forms-sample" method="POST" action="./pages/target_product.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Titre</label>
             <input type="text" class="form-control" id="title" name="title" autocomplete="off" placeholder="Titre" required>
@@ -57,8 +58,8 @@
         <div class="form-group">
             <label for="category">Catégories</label>
             <select class="form-select" aria-label="Default select example" name="category" id="category">
-                <option selected value="Location">Location</option>
-                <option value="Vente">Vente</option>
+                <option selected value="1">locations</option>
+                <option value="2">ventes</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary mr-2">Ajouter</button>

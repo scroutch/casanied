@@ -7,7 +7,7 @@
     ?>
 </div>
 <div class="card-body">
-    <h6 class="card-title">Ajouter un callaborateur</h6>
+    <h6 class="card-title">Ajouter un collaborateur</h6>
     <form class="forms-sample" method="POST" action="./pages/target_collab.php">
         <div class="form-group">
             <label for="name">Nom</label>

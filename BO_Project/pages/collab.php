@@ -1,14 +1,9 @@
 <div class="row">
-    <?php
-    $_SESSION['item'] = './pages/deleteCollab.php';
-    if (isset($_SESSION['error'])) {
-        echo $_SESSION['error'];
-        unset($_SESSION['error']);
-    }
-    ?>
+
+
 </div>
 <div class="page-content">
-    <div class="col-md-6 grid-margin stretch-card">
+    <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h6 class="card-title">Collaborateurs</h6>
