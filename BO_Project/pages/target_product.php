@@ -30,6 +30,7 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
 
     if ($ext_up != 'jpg' && $ext_up != 'jpeg' && $ext_up != 'png' && $ext_up != 'bmp' && $ext_up != 'gif') {
         $_SESSION['error'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Le fichier selectionné n\'est pas une image.</div>';
+        header('Location: ../admin.php?page=8');
     } else {
         $imgDir = '../assets/upload/';
         $filename = 'prod-' . time();
@@ -37,8 +38,15 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
         $tmp_file = $_FILES['img']['tmp_name'];
         move_uploaded_file($tmp_file, $picture);
         $picture = $filename . '.' . $ext_up;
-        $query = 'INSERT INTO product (title, rue, code_postal, ville, nb_bedroom, nb_bathroom, surface, type_product, price, category_id, img) VALUES (:title, :rue, :code_postal, :ville, :nb_bedroom, :nb_bathroom, :surface, :type_product, :price, :category, :img)';
-        $req = $bdd->prepare($query);
+        if (isset($_GET['id']) && $_GET['id'] != null) {
+            $query = 'UPDATE product SET title=:title, rue=:rue, code_postal=:code_postal, ville=:ville, nb_bedroom=:nb_bedroom, nb_bathroom=:nb_bathroom, surface=:surface, type_product=:type_product, price=:price, category_id=:category, img=:img WHERE id=:id';
+            $req = $bdd->prepare($query);
+            $req->bindValue(':id', $id, PDO::PARAM_INT);
+        } else {
+            $query = 'INSERT INTO product (title, rue, code_postal, ville, nb_bedroom, nb_bathroom, surface, type_product, price, category_id, img) VALUES (:title, :rue, :code_postal, :ville, :nb_bedroom, :nb_bathroom, :surface, :type_product, :price, :category, :img)';
+            $req = $bdd->prepare($query);
+        }
+
         $req->bindValue(':title', $title, PDO::PARAM_STR);
         $req->bindValue(':img', $picture, PDO::PARAM_STR);
         $req->bindValue(':rue', $rue, PDO::PARAM_STR);
