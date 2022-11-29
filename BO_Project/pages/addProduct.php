@@ -58,8 +58,8 @@
         <div class="form-group">
             <label for="category">Catégories</label>
             <select class="form-select" aria-label="Default select example" name="category" id="category">
-                <option selected value="locations">locations</option>
-                <option value="ventes">ventes</option>
+                <option selected value="1">locations</option>
+                <option value="2">ventes</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary mr-2">Ajouter</button>

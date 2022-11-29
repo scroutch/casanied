@@ -77,7 +77,7 @@
                                                 <?php } else { ?>
                                                     <th><?php echo 'vente' ?></th>
                                                 <?php } ?>
-                                                <td><img src="<?php echo htmlspecialchars($data['img']) ?>"></td>
+                                                <td><img src="./assets/upload/<?php echo htmlspecialchars($data['img']) ?>"></td>
                                                 <td><?php echo htmlspecialchars($data['title']) ?></td>
                                                 <td><?php echo htmlspecialchars($data['rue']) ?></td>
                                                 <td><?php echo htmlspecialchars($data['code_postal']) ?></td>

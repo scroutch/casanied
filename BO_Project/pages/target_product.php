@@ -2,9 +2,6 @@
 
 include('bdd.php');
 
-$infos = pathinfo($_FILES['img']['name']);
-var_dump($infos['filename']);
-
 if ((isset($_POST['title']) && !empty($_POST['title'])) &&
     (isset($_POST['rue']) && !empty($_POST['rue'])) &&
     (isset($_POST['cp']) && !empty($_POST['cp'])) &&
@@ -30,11 +27,6 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
     $category = htmlspecialchars($_POST['category']);
     $infos = pathinfo($_FILES['img']['name']);
     $ext_up = strtolower($infos['extension']);
-    if ($category == "locations") {
-        $category = 1;
-    } else if ($category == "ventes") {
-        $category = 2;
-    }
 
     if ($ext_up != 'jpg' && $ext_up != 'jpeg' && $ext_up != 'png' && $ext_up != 'bmp' && $ext_up != 'gif') {
         $_SESSION['error'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Le fichier selectionné n\'est pas une image.</div>';
@@ -44,6 +36,7 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
         $picture = $imgDir . $filename . '.' . $ext_up;
         $tmp_file = $_FILES['img']['tmp_name'];
         move_uploaded_file($tmp_file, $picture);
+        $picture = $filename . '.' . $ext_up;
         $query = 'INSERT INTO product (title, rue, code_postal, ville, nb_bedroom, nb_bathroom, surface, type_product, price, category_id, img) VALUES (:title, :rue, :code_postal, :ville, :nb_bedroom, :nb_bathroom, :surface, :type_product, :price, :category, :img)';
         $req = $bdd->prepare($query);
         $req->bindValue(':title', $title, PDO::PARAM_STR);
