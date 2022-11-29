@@ -12,35 +12,35 @@
     <form class="forms-sample" method="POST" action="./pages/target_product.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Titre</label>
-            <input type="text" class="form-control" id="title" name="title" autocomplete="off" placeholder="Titre" required>
+            <input type="text" class="form-control" id="title" name="title" autocomplete="off" placeholder="Titre">
         </div>
         <div class="form-group">
             <label for="img">Image</label>
-            <input type="file" class="form-control" id="img" name="img" autocomplete="off" placeholder="Titre" required>
+            <input type="file" class="form-control" id="img" name="img" autocomplete="off" placeholder="Titre">
         </div>
         <div class="form-group">
             <label for="rue">Rue</label>
-            <input type="text" class="form-control" id="rue" name="rue" autocomplete="off" placeholder="Rue" required>
+            <input type="text" class="form-control" id="rue" name="rue" autocomplete="off" placeholder="Rue">
         </div>
         <div class="form-group">
             <label for="cp">Code postale</label>
-            <input type="text" class="form-control" id="cp" name="cp" placeholder="code postal" required>
+            <input type="text" class="form-control" id="cp" name="cp" placeholder="code postal">
         </div>
         <div class="form-group">
             <label for="ville">Ville</label>
-            <input type="text" class="form-control" id="ville" name="ville" autocomplete="off" placeholder="Ville" required>
+            <input type="text" class="form-control" id="ville" name="ville" autocomplete="off" placeholder="Ville">
         </div>
         <div class="form-group">
             <label for="nb_bedroom">Nombre de chambre</label>
-            <input type="number" class="form-control" id="nb_bedroom" name="nb_bedroom" autocomplete="off" required>
+            <input type="number" class="form-control" id="nb_bedroom" name="nb_bedroom" autocomplete="off">
         </div>
         <div class="form-group">
             <label for="nb_bathroom">Nombre de salle de bain</label>
-            <input type="number" class="form-control" id="nb_bathroom" name="nb_bathroom" autocomplete="off" required>
+            <input type="number" class="form-control" id="nb_bathroom" name="nb_bathroom" autocomplete="off">
         </div>
         <div class="form-group">
             <label for="Surface">Superficie</label>
-            <input type="text" class="form-control" id="Surface" name="Surface" autocomplete="off" placeholder="Superficie" required>
+            <input type="text" class="form-control" id="Surface" name="Surface" autocomplete="off" placeholder="Superficie">
         </div>
         <div class="form-group">
             <label for="type_product">Type de bien</label>
@@ -53,13 +53,13 @@
         </div>
         <div class="form-group">
             <label for="price">Prix</label>
-            <input type="text" class="form-control" id="price" name="price" autocomplete="off" placeholder="prix" required>
+            <input type="text" class="form-control" id="price" name="price" autocomplete="off" placeholder="prix">
         </div>
         <div class="form-group">
             <label for="category">Catégories</label>
             <select class="form-select" aria-label="Default select example" name="category" id="category">
-                <option selected value="1">locations</option>
-                <option value="2">ventes</option>
+                <option selected value="locations">locations</option>
+                <option value="ventes">ventes</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary mr-2">Ajouter</button>
