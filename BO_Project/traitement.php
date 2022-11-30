@@ -18,9 +18,7 @@ if ($data != NULL) {
         //     $_SESSION['nom'] = $data['nom'];
         $_SESSION['username'] = $data['email'];
         $_SESSION['admin'] = 'ADMIN';
-
         $_SESSION['message'] = '<div class="alert alert-success text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Bienvenue dans l\'administration</div>';
-
         header('location: admin.php');
         // } else {
         //     $_SESSION['message'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Utilisateur inconnu</div>';
