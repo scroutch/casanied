@@ -71,7 +71,12 @@ include('./pages/bdd.php'); //(chemin à adapter)
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown nav-profile">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<p class="email text-muted mb-3"><?php echo $_SESSION['username'] ?></p>
+								<p class="email text-muted"><?php echo $_SESSION['username'] ?></p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-danger" href="pages/logout.php">
+								Se déconnecter
 							</a>
 						</li>
 					</ul>
@@ -112,6 +117,7 @@ include('./pages/bdd.php'); //(chemin à adapter)
 				} else {
 					$_SESSION['message'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Vous n\'avez pas les droits pour accéder à cette zone</div>';
 					// redirection vers le site (chemin à adapter)
+					header('Location: ../index.php?page=1');
 				}
 
 
@@ -149,6 +155,7 @@ include('./pages/bdd.php'); //(chemin à adapter)
 	<script src="assets/js/dashboard.js"></script>
 	<script src="assets/js/datepicker.js"></script>
 	<!-- end custom js for this page -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </body>
 
 </html>
