@@ -1,6 +1,11 @@
 <div class="row">
-
-
+    <?php
+    $_SESSION['link'] = './pages/deleteCollab.php';
+    if (isset($_SESSION['error'])) {
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+    ?>
 </div>
 <div class="page-content">
     <div class="col-md-12 grid-margin stretch-card">
