@@ -26,14 +26,6 @@
                     <div id="dataTableExample_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
-                                <div class="dataTables_length" id="dataTableExample_length"><label>Show <select name="dataTableExample_length" aria-controls="dataTableExample" class="custom-select custom-select-sm form-control">
-                                            <option value="10">10</option>
-                                            <option value="30">30</option>
-                                            <option value="50">50</option>
-                                            <option value="-1">All</option>
-                                        </select> entries</label></div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
                                 <div id="dataTableExample_filter" class="dataTables_filter"><label><input type="search" class="form-control" placeholder="Search" aria-controls="dataTableExample"></label></div>
                             </div>
                         </div>
@@ -63,13 +55,8 @@
                                         $query = 'SELECT * FROM product ORDER BY created_date DESC';
                                         $req = $bdd->prepare($query);
                                         $req->execute();
-
                                         while ($data = $req->fetch()) {
-
-
                                         ?>
-
-
                                             <tr>
                                                 <th><?php echo htmlspecialchars($data['id']) ?></th>
                                                 <?php if (htmlspecialchars($data['category_id']) == 1) { ?>
@@ -115,9 +102,6 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-12 col-md-5">
-                                <div class="dataTables_info" id="dataTableExample_info" role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div>
-                            </div>
                             <div class="col-sm-12 col-md-7">
                                 <div class="dataTables_paginate paging_simple_numbers" id="dataTableExample_paginate">
                                     <ul class="pagination">
