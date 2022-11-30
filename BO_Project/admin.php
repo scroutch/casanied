@@ -1,6 +1,5 @@
 <?php
-include('../pages/bdd.php'); //(chemin à adapter)
-// var_dump($_SESSION);
+include('./pages/bdd.php'); //(chemin à adapter)
 ?>
 
 <!DOCTYPE html>
@@ -46,18 +45,6 @@ include('../pages/bdd.php'); //(chemin à adapter)
 				<ul class="nav">
 					<li class="nav-item nav-category">Général</li>
 					<li class="nav-item">
-						<a href="admin.php?page=2" class="nav-link">
-							<i class="link-icon" data-feather="box"></i>
-							<span class="link-title">Catégories</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="admin.php?page=3" class="nav-link">
-							<i class="link-icon" data-feather="box"></i>
-							<span class="link-title">Sous catégories</span>
-						</a>
-					</li>
-					<li class="nav-item">
 						<a href="admin.php?page=4" class="nav-link">
 							<i class="link-icon" data-feather="box"></i>
 							<span class="link-title">Produits</span>
@@ -73,42 +60,6 @@ include('../pages/bdd.php'); //(chemin à adapter)
 			</div>
 		</nav>
 		<!-- fin left navbar -->
-
-		<!-- settings sidebar -->
-		<nav class="settings-sidebar">
-			<div class="sidebar-body">
-				<a href="#" class="settings-sidebar-toggler">
-					<i data-feather="settings"></i>
-				</a>
-				<h6 class="text-muted">Sidebar:</h6>
-				<div class="form-group border-bottom">
-					<div class="form-check form-check-inline">
-						<label class="form-check-label">
-							<input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarLight" value="sidebar-light" checked>
-							Light
-						</label>
-					</div>
-					<div class="form-check form-check-inline">
-						<label class="form-check-label">
-							<input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarDark" value="sidebar-dark">
-							Dark
-						</label>
-					</div>
-				</div>
-				<div class="theme-wrapper">
-					<h6 class="text-muted mb-2">Light Theme:</h6>
-					<a class="theme-item active" href="demo_1/dashboard-one.html">
-						<img src="assets/images/screenshots/light.jpg" alt="light theme">
-					</a>
-					<h6 class="text-muted mb-2">Dark Theme:</h6>
-					<a class="theme-item" href="demo_2/dashboard-one.html">
-						<img src="assets/images/screenshots/dark.jpg" alt="light theme">
-					</a>
-				</div>
-			</div>
-		</nav>
-		<!-- fin settings sidebar -->
-
 		<div class="page-wrapper">
 
 			<!-- top navbar -->
@@ -118,113 +69,10 @@ include('../pages/bdd.php'); //(chemin à adapter)
 				</a>
 				<div class="navbar-content">
 					<ul class="navbar-nav">
-						<li class="nav-item dropdown nav-notifications">
-							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="bell"></i>
-								<div class="indicator">
-									<div class="circle"></div>
-								</div>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="notificationDropdown">
-								<div class="dropdown-header d-flex align-items-center justify-content-between">
-									<p class="mb-0 font-weight-medium">6 New Notifications</p>
-									<a href="javascript:;" class="text-muted">Clear all</a>
-								</div>
-								<div class="dropdown-body">
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="user-plus"></i>
-										</div>
-										<div class="content">
-											<p>New customer registered</p>
-											<p class="sub-text text-muted">2 sec ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="gift"></i>
-										</div>
-										<div class="content">
-											<p>New Order Recieved</p>
-											<p class="sub-text text-muted">30 min ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="alert-circle"></i>
-										</div>
-										<div class="content">
-											<p>Server Limit Reached!</p>
-											<p class="sub-text text-muted">1 hrs ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="layers"></i>
-										</div>
-										<div class="content">
-											<p>Apps are ready for update</p>
-											<p class="sub-text text-muted">5 hrs ago</p>
-										</div>
-									</a>
-									<a href="javascript:;" class="dropdown-item">
-										<div class="icon">
-											<i data-feather="download"></i>
-										</div>
-										<div class="content">
-											<p>Download completed</p>
-											<p class="sub-text text-muted">6 hrs ago</p>
-										</div>
-									</a>
-								</div>
-								<div class="dropdown-footer d-flex align-items-center justify-content-center">
-									<a href="javascript:;">View all</a>
-								</div>
-							</div>
-						</li>
 						<li class="nav-item dropdown nav-profile">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src="https://via.placeholder.com/30x30" alt="userr">
+								<p class="email text-muted mb-3"><?php echo $_SESSION['username'] ?></p>
 							</a>
-							<div class="dropdown-menu" aria-labelledby="profileDropdown">
-								<div class="dropdown-header d-flex flex-column align-items-center">
-									<div class="figure mb-3">
-										<img src="https://via.placeholder.com/80x80" alt="">
-									</div>
-									<div class="info text-center">
-										<p class="name font-weight-bold mb-0">Amiah Burton</p>
-										<p class="email text-muted mb-3">amiahburton@gmail.com</p>
-									</div>
-								</div>
-								<div class="dropdown-body">
-									<ul class="profile-nav p-0 pt-3">
-										<li class="nav-item">
-											<a href="pages/general/profile.html" class="nav-link">
-												<i data-feather="user"></i>
-												<span>Profile</span>
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="javascript:;" class="nav-link">
-												<i data-feather="edit"></i>
-												<span>Edit Profile</span>
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="javascript:;" class="nav-link">
-												<i data-feather="repeat"></i>
-												<span>Switch User</span>
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="index.php" class="nav-link">
-												<i data-feather="log-out"></i>
-												<span>Log Out</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
 						</li>
 					</ul>
 				</div>
@@ -258,6 +106,8 @@ include('../pages/bdd.php'); //(chemin à adapter)
 						include('pages/confirmDelete.php');
 					} elseif ($page == 8) {
 						include('pages/addProduct.php');
+					} elseif ($page == 9) {
+						include('pages/target_product.php');
 					}
 				} else {
 					$_SESSION['message'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Vous n\'avez pas les droits pour accéder à cette zone</div>';
