@@ -26,8 +26,8 @@ $req2->execute();
                 </p>
             </div>
             <div class="card-footer d-flex justify-content-end">
-                <i class="fa-regular fa-envelope p-2"></i>
-                <i class="fa-regular fa-heart p-2"></i>
+                <a href="index.php?page=5"><i class="fa-regular fa-envelope p-2"></i></a>
+                <!-- <i class="fa-regular fa-heart p-2"></i> -->
             </div>
         </div>
     <?php
