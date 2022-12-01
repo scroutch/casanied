@@ -19,6 +19,7 @@
         $data = $req->fetch();
     }
     ?>
+
     <form class="forms-sample" method="POST" action="admin.php?page=9<?php if (isset($_GET['id'])) {
                                                                             echo "&&id=" . $_GET['id'];
                                                                         } ?>" enctype="multipart/form-data">
@@ -29,7 +30,7 @@
         <?php if (!isset($id)) { ?>
             <div class="form-group">
                 <label for="img">Image</label>
-                <input type="file" class="form-control" id="img" name="img" autocomplete="off" value="<?php echo isset($id) ? $data['img'] : "" ?>" required>
+                <input type="file" class="form-control" id="img" name="img" autocomplete="off" value="" required>
             </div>
         <?php } ?>
         <div class="form-group">
@@ -46,11 +47,11 @@
         </div>
         <div class="form-group">
             <label for="nb_bedroom">Nombre de chambre</label>
-            <input type="number" class="form-control" id="nb_bedroom" name="nb_bedroom" autocomplete="off" value="<?php echo isset($id) ? $data['nb_bedroom'] : "" ?>" required>
+            <input type="text" class="form-control" id="nb_bedroom" name="nb_bedroom" value="<?php echo isset($id) ? $data['nb_bedroom'] : "" ?>">
         </div>
         <div class="form-group">
             <label for="nb_bathroom">Nombre de salle de bain</label>
-            <input type="number" class="form-control" id="nb_bathroom" name="nb_bathroom" autocomplete="off" value="<?php echo isset($id) ? $data['nb_bathroom'] : "" ?>" required>
+            <input type="text" class="form-control" id="nb_bathroom" name="nb_bathroom" value="<?php echo isset($id) ? $data['nb_bathroom'] : "" ?>">
         </div>
         <div class="form-group">
             <label for="Surface">Superficie</label>
