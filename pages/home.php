@@ -3,7 +3,7 @@ include('onglet.php');
 // var_dump($_POST);
 if ($_POST) {
     $category = $_GET['category'];
-    var_dump($category);
+    // var_dump($category);
     $ville = ucfirst($_POST['ville']);
     $price = $_POST['price'];
     $surface = $_POST['surface'];
@@ -48,7 +48,7 @@ if ($_POST) {
     $req->bindValue(':immeuble', $immeuble, PDO::PARAM_STR);
     $req->bindValue(':category', $category, PDO::PARAM_INT);
     $req->execute();
-    var_dump($req);
+    // var_dump($req);
 
 ?>
     <h2>Résultat de votre recherche</h2>
