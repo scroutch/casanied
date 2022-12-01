@@ -15,7 +15,7 @@ $req2->execute();
     while ($data = $req2->fetch()) {
     ?>
         <div class="card m-2">
-            <img class="card-img-top" src="<?php echo $data['img'] ?>" alt="Card image cap">
+            <img class="card-img-top" src="./BO_Project/assets/upload/<?php echo $data['img'] ?>" alt="Card image cap">
             <div class="card-body d-flex flex-column justify-content-around">
                 <h5 class="card-title d-flex justify-content-between"><?php echo $data['title'] ?><span><?php echo $data['price'] ?> €</span></h5>
                 <p class="card-text d-flex justify-content-center"><i class="fa-solid fa-location-dot"></i><span class="ps-2"><?php echo $data['ville'] ?></span></p>
