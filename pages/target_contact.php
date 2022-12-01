@@ -20,7 +20,6 @@ if (
     $tel = $_POST['tel'];
     $mail = $_POST['mail'];
     $message = $_POST['message'];
-    var_dump($_POST);
     $query = 'INSERT INTO contact (name, firstName, tel, mail, message) VALUES ( :name, :firstName, :tel, :mail, :message)';
     $req = $bdd->prepare($query);
     $req->bindValue(':name', $name, PDO::PARAM_STR);
@@ -29,4 +28,9 @@ if (
     $req->bindValue(':mail', $mail, PDO::PARAM_STR);
     $req->bindValue(':message', $message, PDO::PARAM_STR);
     $req->execute();
+    $_SESSION['errorMess'] = '<div class="alert alert-success text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Votre message a bien été envoyé.</div>';
+    header('Location: ../index.php?page=5');
+} else {
+    $_SESSION['errorMess'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Votre message n\'a pas pu être envoyé.</div>';
+    header('Location: ../index.php?page=5');
 }

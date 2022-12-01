@@ -1,4 +1,12 @@
 <div class="container-fluid" id="contact">
+    <div class="row">
+        <?php
+        if (isset($_SESSION['errorMess'])) {
+            echo $_SESSION['errorMess'];
+            unset($_SESSION['errorMess']);
+        }
+        ?>
+    </div>
     <h2>Nous contacter</h2>
     <form action="pages/target_contact.php" method="POST" class="container-fluid d-flex flex-column justify-content-evenly flex-wrap">
         <div class="perso d-flex justify-content-between">
