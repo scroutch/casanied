@@ -1,13 +1,14 @@
 <?php
 include('onglet.php');
 // var_dump($_POST);
-if ($_POST) {
+if ((isset($_POST['ville']) && $_POST['ville'] != null) &&
+    (isset($_POST['type_product']) && $_POST['type_product'] != null) &&
+    (isset($_POST['nb_bedroom']) && $_POST['nb_bedroom'] != null)
+) {
     $category = $_GET['category'];
-    // var_dump($category);
     $ville = ucfirst($_POST['ville']);
-    $price = $_POST['price'];
-    $surface = $_POST['surface'];
     $nb_bedroom = $_POST['nb_bedroom'];
+
     if (in_array("maison", $_POST['type_product'])) {
         $maison = "maison";
     } else {
@@ -31,16 +32,44 @@ if ($_POST) {
     } else {
         $immeuble = "";
     }
-    // var_dump($_POST['type_product']);
-    // var_dump($maison, $appartement, $terrain, $immeuble);
 
-    $query = 'SELECT * FROM product WHERE category_id = :category AND ville = :ville AND
-    (type_product = :maison OR type_product = :appartement OR type_product = :terrain OR type_product = :immeuble) OR
-    (:price BETWEEN price - 10000 AND price + 10000) OR (:surface BETWEEN surface - 10 AND surface + 10) OR nb_bedroom = :nb_bedroom';
-    $req = $bdd->prepare($query);
+    if ((isset($_POST['price']) && $_POST['price'] != null) &&
+        (isset($_POST['surface']) && $_POST['surface'] != null)
+    ) {
+        $price = $_POST['price'];
+        $surface = $_POST['surface'];
+
+        $query = 'SELECT * FROM product WHERE category_id = :category AND ville = :ville AND
+        (type_product = :maison OR type_product = :appartement OR type_product = :terrain OR type_product = :immeuble) AND
+        (:price BETWEEN price - 10000 AND price + 10000) AND (:surface BETWEEN surface - 10 AND surface + 10) AND (:nb_bedroom BETWEEN nb_bedroom - 0 AND nb_bedroom + 1)';
+
+        $req = $bdd->prepare($query);
+        $req->bindValue(':price', $price, PDO::PARAM_STR);
+        $req->bindValue(':surface', $surface, PDO::PARAM_STR);
+    } else if ((isset($_POST['price'])) && $_POST['price'] != null) {
+        $price = $_POST['price'];
+        $query = 'SELECT * FROM product WHERE category_id = :category AND ville = :ville AND
+        (type_product = :maison OR type_product = :appartement OR type_product = :terrain OR type_product = :immeuble) AND
+        (:price BETWEEN price - 10000 AND price + 10000) AND (:nb_bedroom BETWEEN nb_bedroom - 0 AND nb_bedroom + 1)';
+
+        $req = $bdd->prepare($query);
+        $req->bindValue(':price', $price, PDO::PARAM_STR);
+    } else if ((isset($_POST['surface'])) && $_POST['surface']) {
+        $surface = $_POST['surface'];
+
+        $query = 'SELECT * FROM product WHERE category_id = :category AND ville = :ville AND
+        (type_product = :maison OR type_product = :appartement OR type_product = :terrain OR type_product = :immeuble) AND (:surface BETWEEN surface - 10 AND surface + 10) AND (:nb_bedroom BETWEEN nb_bedroom - 0 AND nb_bedroom + 1)';
+
+        $req = $bdd->prepare($query);
+        $req->bindValue(':surface', $surface, PDO::PARAM_STR);
+    } else {
+        $query = 'SELECT * FROM product WHERE category_id = :category AND ville = :ville AND
+        (type_product = :maison OR type_product = :appartement OR type_product = :terrain OR type_product = :immeuble) AND (:nb_bedroom BETWEEN nb_bedroom - 0 AND nb_bedroom + 1)';
+
+        $req = $bdd->prepare($query);
+    }
+
     $req->bindValue(':ville', $ville, PDO::PARAM_STR);
-    $req->bindValue(':price', $price, PDO::PARAM_STR);
-    $req->bindValue(':surface', $surface, PDO::PARAM_STR);
     $req->bindValue(':nb_bedroom', $nb_bedroom, PDO::PARAM_STR);
     $req->bindValue(':maison', $maison, PDO::PARAM_STR);
     $req->bindValue(':appartement', $appartement, PDO::PARAM_STR);
@@ -48,6 +77,9 @@ if ($_POST) {
     $req->bindValue(':immeuble', $immeuble, PDO::PARAM_STR);
     $req->bindValue(':category', $category, PDO::PARAM_INT);
     $req->execute();
+
+
+
     // var_dump($req);
 
 ?>
