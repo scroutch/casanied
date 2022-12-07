@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 14 nov. 2022 à 18:39
+-- Généré le : mer. 07 déc. 2022 à 12:38
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -64,8 +64,8 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'location'),
-(2, 'vente');
+(1, 'locations'),
+(2, 'ventes');
 
 -- --------------------------------------------------------
 
@@ -83,14 +83,22 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `message` varchar(255) NOT NULL,
   `date_envoi` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`id`, `name`, `firstName`, `tel`, `mail`, `message`, `date_envoi`) VALUES
-(1, 'Duhain', 'Cécile', '0606060606', 'cecile@test.com', 'blablablabla', '2022-11-11 12:18:23');
+(1, 'duhain', 'cecile', '0606060606', 'test@test.com', 'blablablabla', '2022-11-10 14:06:23'),
+(2, 'Dupont', 'Maurice', '0606060606', 'md@test.fr', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2022-12-01 11:34:56'),
+(3, 'Dupont', 'Maurice', '0606060606', 'md@test.fr', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2022-12-01 11:36:53'),
+(4, 'Dupont', 'Maurice', '0606060606', 'md@test.fr', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2022-12-01 11:39:23'),
+(5, 'Dupont', 'Maurice', '0606060606', 'md@test.fr', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2022-12-01 11:42:25'),
+(6, 'Dupont', 'Maurice', '0606060606', 'md@test.fr', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2022-12-01 11:44:05'),
+(7, 'Dupond', 'Jack', '0606060606', 'dj@test.com', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2022-12-01 11:48:02'),
+(8, 'test', 'fddsdfs', '0606060606', 'test@test.net', 'qsdqsdqsdq', '2022-12-01 11:49:43'),
+(9, 'dfsfsdf', 'sfdsfs', '0606060606', 'test@test.com', 'sqdqd', '2022-12-01 11:51:00');
 
 -- --------------------------------------------------------
 
@@ -101,46 +109,32 @@ INSERT INTO `contact` (`id`, `name`, `firstName`, `tel`, `mail`, `message`, `dat
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `img` varchar(255) NOT NULL,
+  `img` varchar(255) DEFAULT NULL,
   `title` varchar(150) NOT NULL,
   `rue` varchar(255) NOT NULL,
   `code_postal` varchar(10) NOT NULL,
   `ville` varchar(100) NOT NULL,
   `nb_bedroom` varchar(20) NOT NULL,
-  `nb_bathroom` int(11) NOT NULL,
+  `nb_bathroom` varchar(20) NOT NULL,
   `surface` varchar(50) NOT NULL,
-  `type_product` varchar(50) NOT NULL,
+  `type_product` varchar(100) NOT NULL,
   `price` varchar(50) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `product`
 --
 
 INSERT INTO `product` (`id`, `img`, `title`, `rue`, `code_postal`, `ville`, `nb_bedroom`, `nb_bathroom`, `surface`, `type_product`, `price`, `created_date`, `category_id`) VALUES
-(1, 'assets/img/maison1.jpg', 'Maison de campagne', 'Rue de l\'hôtel de ville', '57220', 'Boulay', '5', 2, '125', 'maison', '230000', '2022-10-18 14:47:46', 2),
-(2, 'assets/img/appart.jpg', 'Appartement en centre ville', 'Rue Voltaire', '31000', 'Toulouse', '2', 1, '80', 'appartement', '210000', '2022-10-18 15:34:31', 2),
-(3, 'assets/img/maison_banlieu.jpg', 'Maison en banlieue', 'Rue pasteur', '94081', 'Vitry', '3', 1, '92', 'maison', '210000', '2022-10-18 15:39:41', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(75) NOT NULL,
-  `firstName` varchar(100) NOT NULL,
-  `mail` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+(28, 'prod-1669889161.jpg', 'Maison de campagne', '5 rue beaudelaire', '57369', 'Yutz', '3', '1', '105', 'Maison', '175000', '2022-12-01 11:06:01', 2),
+(29, 'prod-1669889251.jpg', 'Maison contemporaine', '18 rue de la gare', '57300', 'Hagondange', '4', '2', '175', 'Maison', '312000', '2022-12-01 11:07:31', 2),
+(30, 'prod-1669889402.jpg', 'Maison', '18 rue des peupliers', '54000', 'Boulay', '3', '1', '135', 'Maison', '1050', '2022-12-01 11:10:02', 1),
+(32, 'prod-1669890320.jpg', 'Terrain', 'rue du peuple', '89000', 'toulouse', '1', '1', '165000', 'Terrain', '65000', '2022-12-01 11:25:20', 2),
+(33, 'prod-1669893338.png', 'appartement en ville', 'dfsf', 'sfds', 'sdfsd', '3', '1', '175', 'Appartement', '950', '2022-12-01 12:15:38', 1);
 
 --
 -- Contraintes pour les tables déchargées
