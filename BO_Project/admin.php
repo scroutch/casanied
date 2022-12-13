@@ -10,6 +10,7 @@ include('./pages/bdd.php'); //(chemin à adapter)
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Panel admin</title>
+	<link rel="stylesheet" href="../assets/fontawesome-free-6.2.0/css/all.css">
 	<!-- core:css -->
 	<link rel="stylesheet" href="assets/vendors/core/core.css">
 	<!-- endinject -->
@@ -24,6 +25,8 @@ include('./pages/bdd.php'); //(chemin à adapter)
 	<link rel="stylesheet" href="assets/css/style.css">
 	<!-- End layout styles -->
 	<link rel="shortcut icon" href="assets/images/favicon.png" />
+	<!-- style perso -->
+	<link rel="stylesheet" href="assets/css/backoffice.css">
 </head>
 
 <body class="sidebar-dark">

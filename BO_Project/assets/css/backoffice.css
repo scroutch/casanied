@@ -1,0 +1,17 @@
+:root {
+    --main-color: #ff6500;
+    --secondary-color: #016450;
+}
+
+.feather {
+    color: var(--secondary-color);
+}
+
+.feather-delete {
+    color: var(--main-color);
+}
+
+.fa-solid {
+    margin-left: -10px;
+    color: var(--main-color);
+}
