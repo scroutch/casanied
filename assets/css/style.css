@@ -160,6 +160,10 @@ footer .nav-footer ul li {
     height: 25px;
 }
 
+.btn.btn-secondary {
+    background-color: var(--main-color);
+}
+
 /***CONTAINER***/
 
 /***ONGLETS***/
