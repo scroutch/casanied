@@ -34,11 +34,15 @@
             </div>
         <?php } ?>
         <div class="form-group">
+            <label for="rue">Description</label>
+            <textarea type="text" class="form-control" id="description" name="description" autocomplete="off" placeholder="description" rows=" 5" cols="33"" required><?php echo isset($id) ? $data['description'] : "" ?></textarea>
+        </div>
+        <div class=" form-group">
             <label for="rue">Rue</label>
             <input type="text" class="form-control" id="rue" name="rue" autocomplete="off" placeholder="Rue" value="<?php echo isset($id) ? $data['rue'] : "" ?>" required>
         </div>
         <div class="form-group">
-            <label for="cp">Code postale</label>
+            <label for="cp">Code postal</label>
             <input type="text" class="form-control" id="cp" name="cp" placeholder="Code postal" value="<?php echo isset($id) ? $data['code_postal'] : "" ?>" required>
         </div>
         <div class="form-group">

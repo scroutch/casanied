@@ -40,8 +40,8 @@
                                             <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 96.9667px;" aria-label="Age: activate to sort column ascending">rue</th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 192.483px;" aria-label="Start date: activate to sort column ascending">code postal</th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">ville</th>
-                                            <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">Nombre de chambres</th>
-                                            <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">Nombre de salle de bain</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">Chambres</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">Salle de bain</th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">Superficie</th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">Type</th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTableExample" rowspan="1" colspan="1" style="width: 150px;" aria-label="Salary: activate to sort column ascending">prix</th>
@@ -64,7 +64,7 @@
                                                     <th><?php echo 'vente' ?></th>
                                                 <?php } ?>
                                                 <td>
-                                                    <a href="#" title="Modifier les images">
+                                                    <a href="admin.php?page=10&id=<?php echo htmlspecialchars($data['id']) ?>" title="Modifier les images">
                                                         <img src="./assets/upload/<?php echo htmlspecialchars($data['img']) ?>">
                                                         <i class="fa-solid fa-pen"></i>
                                                     </a>

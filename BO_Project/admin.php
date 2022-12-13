@@ -116,6 +116,10 @@ include('./pages/bdd.php'); //(chemin à adapter)
 						include('pages/addProduct.php');
 					} elseif ($page == 9) {
 						include('pages/target_product.php');
+					} elseif ($page == 10) {
+						include('pages/updatePicture.php');
+					} elseif ($page == 11) {
+						include('pages/target_picture.php');
 					}
 				} else {
 					$_SESSION['message'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Vous n\'avez pas les droits pour accéder à cette zone</div>';

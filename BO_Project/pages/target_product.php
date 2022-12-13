@@ -2,6 +2,7 @@
 include('bdd.php');
 // var_dump($_POST);
 if ((isset($_POST['title']) && !empty($_POST['title'])) &&
+    (isset($_POST['description']) && !empty($_POST['description'])) &&
     (isset($_POST['rue']) && !empty($_POST['rue'])) &&
     (isset($_POST['cp']) && !empty($_POST['cp'])) &&
     (isset($_POST['ville']) && !empty($_POST['ville'])) &&
@@ -13,6 +14,7 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
     (isset($_POST['category']) && !empty($_POST['category']))
 ) {
     $title = htmlspecialchars($_POST['title']);
+    $description = htmlspecialchars($_POST['description']);
     $rue = htmlspecialchars($_POST['rue']);
     $cp = htmlspecialchars($_POST['cp']);
     $ville = htmlspecialchars($_POST['ville']);
@@ -26,7 +28,7 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
 
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $query = 'UPDATE product SET title=:title, rue=:rue, code_postal=:code_postal, ville=:ville, nb_bedroom=:nb_bedroom, nb_bathroom=:nb_bathroom, surface=:surface, type_product=:type_product, price=:price, category_id=:category WHERE id=:id';
+        $query = 'UPDATE product SET title=:title, description=:description, rue=:rue, code_postal=:code_postal, ville=:ville, nb_bedroom=:nb_bedroom, nb_bathroom=:nb_bathroom, surface=:surface, type_product=:type_product, price=:price, category_id=:category WHERE id=:id';
         $req = $bdd->prepare($query);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
     } else {
@@ -42,12 +44,13 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
             $tmp_file = $_FILES['img']['tmp_name'];
             move_uploaded_file($tmp_file, $picture);
             $picture = $filename . '.' . $ext_up;
-            $query = 'INSERT INTO product (title, rue, code_postal, ville, nb_bedroom, nb_bathroom, surface, type_product, price, category_id, img) VALUES (:title, :rue, :code_postal, :ville, :nb_bedroom, :nb_bathroom, :surface, :type_product, :price, :category, :img)';
+            $query = 'INSERT INTO product (title, description, rue, code_postal, ville, nb_bedroom, nb_bathroom, surface, type_product, price, category_id, img) VALUES (:title, :description,:rue, :code_postal, :ville, :nb_bedroom, :nb_bathroom, :surface, :type_product, :price, :category, :img)';
             $req = $bdd->prepare($query);
             $req->bindValue(':img', $picture, PDO::PARAM_STR);
         }
     }
     $req->bindValue(':title', $title, PDO::PARAM_STR);
+    $req->bindValue(':description', $description, PDO::PARAM_STR);
     $req->bindValue(':rue', $rue, PDO::PARAM_STR);
     $req->bindValue(':code_postal', $cp, PDO::PARAM_STR);
     $req->bindValue(':ville', $ville, PDO::PARAM_STR);
