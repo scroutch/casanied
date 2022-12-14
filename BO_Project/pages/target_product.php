@@ -6,13 +6,14 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
     (isset($_POST['rue']) && !empty($_POST['rue'])) &&
     (isset($_POST['cp']) && !empty($_POST['cp'])) &&
     (isset($_POST['ville']) && !empty($_POST['ville'])) &&
-    (isset($_POST['nb_bedroom']) && !empty($_POST['nb_bedroom'])) &&
-    (isset($_POST['nb_bathroom']) && !empty($_POST['nb_bathroom'])) &&
+    (isset($_POST['nb_bedroom']) && $_POST['nb_bedroom'] != null) &&
+    (isset($_POST['nb_bathroom']) && $_POST['nb_bathroom'] != null) &&
     (isset($_POST['Surface']) && !empty($_POST['Surface'])) &&
     (isset($_POST['type_product']) && !empty($_POST['type_product'])) &&
     (isset($_POST['price']) && !empty($_POST['price'])) &&
     (isset($_POST['category']) && !empty($_POST['category']))
 ) {
+    // var_dump($_POST);
     $title = htmlspecialchars($_POST['title']);
     $description = htmlspecialchars($_POST['description']);
     $rue = htmlspecialchars($_POST['rue']);

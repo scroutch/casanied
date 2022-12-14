@@ -51,11 +51,12 @@
         </div>
         <div class="form-group">
             <label for="nb_bedroom">Nombre de chambre</label>
-            <input type="text" class="form-control" id="nb_bedroom" name="nb_bedroom" value="<?php echo isset($id) ? $data['nb_bedroom'] : "" ?>">
+            <input type="number" class="form-control" id="nb_bedroom" name="nb_bedroom" min="0" max="50" value="<?php echo isset($id) ? $data['nb_bedroom'] : "" ?>">
+            
         </div>
         <div class="form-group">
             <label for="nb_bathroom">Nombre de salle de bain</label>
-            <input type="text" class="form-control" id="nb_bathroom" name="nb_bathroom" value="<?php echo isset($id) ? $data['nb_bathroom'] : "" ?>">
+            <input type="number" class="form-control" id="nb_bathroom" name="nb_bathroom" min="0" max="50" value="<?php echo isset($id) ? $data['nb_bathroom'] : "" ?>">
         </div>
         <div class="form-group">
             <label for="Surface">Superficie</label>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 07 déc. 2022 à 12:38
+-- Généré le : mer. 14 déc. 2022 à 09:15
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -109,32 +109,32 @@ INSERT INTO `contact` (`id`, `name`, `firstName`, `tel`, `mail`, `message`, `dat
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(150) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
-  `title` varchar(150) NOT NULL,
-  `rue` varchar(255) NOT NULL,
-  `code_postal` varchar(10) NOT NULL,
-  `ville` varchar(100) NOT NULL,
-  `nb_bedroom` varchar(20) NOT NULL,
-  `nb_bathroom` varchar(20) NOT NULL,
-  `surface` varchar(50) NOT NULL,
-  `type_product` varchar(100) NOT NULL,
-  `price` varchar(50) NOT NULL,
+  `description` text,
+  `rue` varchar(255) DEFAULT NULL,
+  `code_postal` varchar(10) DEFAULT NULL,
+  `ville` varchar(100) DEFAULT NULL,
+  `nb_bedroom` int(11) DEFAULT '0',
+  `nb_bathroom` int(11) DEFAULT '0',
+  `surface` varchar(50) DEFAULT NULL,
+  `type_product` varchar(100) DEFAULT NULL,
+  `price` varchar(50) DEFAULT NULL,
   `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `category_id` int(11) NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `product`
 --
 
-INSERT INTO `product` (`id`, `img`, `title`, `rue`, `code_postal`, `ville`, `nb_bedroom`, `nb_bathroom`, `surface`, `type_product`, `price`, `created_date`, `category_id`) VALUES
-(28, 'prod-1669889161.jpg', 'Maison de campagne', '5 rue beaudelaire', '57369', 'Yutz', '3', '1', '105', 'Maison', '175000', '2022-12-01 11:06:01', 2),
-(29, 'prod-1669889251.jpg', 'Maison contemporaine', '18 rue de la gare', '57300', 'Hagondange', '4', '2', '175', 'Maison', '312000', '2022-12-01 11:07:31', 2),
-(30, 'prod-1669889402.jpg', 'Maison', '18 rue des peupliers', '54000', 'Boulay', '3', '1', '135', 'Maison', '1050', '2022-12-01 11:10:02', 1),
-(32, 'prod-1669890320.jpg', 'Terrain', 'rue du peuple', '89000', 'toulouse', '1', '1', '165000', 'Terrain', '65000', '2022-12-01 11:25:20', 2),
-(33, 'prod-1669893338.png', 'appartement en ville', 'dfsf', 'sfds', 'sdfsd', '3', '1', '175', 'Appartement', '950', '2022-12-01 12:15:38', 1);
+INSERT INTO `product` (`id`, `title`, `img`, `description`, `rue`, `code_postal`, `ville`, `nb_bedroom`, `nb_bathroom`, `surface`, `type_product`, `price`, `created_date`, `category_id`) VALUES
+(35, 'Maison de campagne', 'prod-1671007304', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;', '125 rue des peupliers', '57310', 'bousse', 3, 1, '110', 'Maison', '175000', '2022-12-13 15:42:40', 2),
+(36, 'Terrain', 'prod-1670944217.jpg', 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.', '12 rue des fromagers', '54000', 'boulay', 1, 1, '125000000', 'Terrain', '35000', '2022-12-13 16:10:17', 2),
+(37, 'test', 'prod-1671007802.jpg', 'test', 'test', '99999', 'test', 1, 1, '125000', 'Maison', '500000', '2022-12-13 16:17:53', 1),
+(38, 'test', 'prod-1671007976.jpg', 'test', 'test', '55555', 'test', 1, 1, '150000', 'Maison', '135000', '2022-12-14 09:52:56', 1);
 
 --
 -- Contraintes pour les tables déchargées

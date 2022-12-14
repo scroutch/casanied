@@ -21,6 +21,8 @@ if (isset($_FILES)) {
             $req->bindValue(':id', $id, PDO::PARAM_INT);
             $req->bindValue(':img', $picture, PDO::PARAM_STR);
             $req->execute();
+            var_dump($picture);
+            var_dump($id);
             $_SESSION['error'] = '<div class="alert alert-success text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Le produit a bien été modifié</div>';
             header('Location: admin.php?page=4');
         }

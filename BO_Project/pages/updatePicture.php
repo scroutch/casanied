@@ -11,6 +11,7 @@
     <?php
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
+        var_dump($id);
         $query = 'SELECT img FROM product WHERE id=:id';
         $req = $bdd->prepare($query);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
@@ -19,7 +20,7 @@
     }
     ?>
 
-    <form class="forms-sample" method="POST" action="admin.php?page=11&&id=" <?php echo $_GET['id'] ?>" enctype="multipart/form-data">
+    <form class="forms-sample" method="POST" action="admin.php?page=11&&id=<?php echo $_GET['id'] ?>" enctype="multipart/form-data">
         <div class="form-group">
             <label for="img">Image</label>
             <img src="./assets/upload/<?php echo htmlspecialchars($data['img']) ?>" class="updateIMG">
