@@ -65,27 +65,7 @@ include('./pages/bdd.php'); //(chemin à adapter)
 		<!-- fin left navbar -->
 		<div class="page-wrapper">
 
-			<!-- top navbar -->
-			<nav class="navbar">
-				<a href="#" class="sidebar-toggler">
-					<i data-feather="menu"></i>
-				</a>
-				<div class="navbar-content">
-					<ul class="navbar-nav">
-						<li class="nav-item dropdown nav-profile">
-							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<p class="email text-muted"><?php echo $_SESSION['username'] ?></p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link text-danger" href="pages/logout.php">
-								Se déconnecter
-							</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- fin top navbar -->
+			ccc
 
 			<!--------------------------------------------------------------------------------------------------->
 			<!--                                      page content                                             -->

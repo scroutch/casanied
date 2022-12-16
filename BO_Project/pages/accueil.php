@@ -1,4 +1,5 @@
 <div class="row">
+
     <?php
 
     $queryCount = "SELECT COUNT(*) FROM category";
