@@ -31,7 +31,6 @@ include('./pages/bdd.php'); //(chemin à adapter)
 
 <body class="sidebar-dark">
 	<div class="main-wrapper">
-
 		<!-- left navbar -->
 		<nav class="sidebar">
 			<div class="sidebar-header">
@@ -64,9 +63,6 @@ include('./pages/bdd.php'); //(chemin à adapter)
 		</nav>
 		<!-- fin left navbar -->
 		<div class="page-wrapper">
-
-			ccc
-
 			<!--------------------------------------------------------------------------------------------------->
 			<!--                                      page content                                             -->
 			<div class="page-content">
@@ -77,7 +73,6 @@ include('./pages/bdd.php'); //(chemin à adapter)
 					} else {
 						$page = 1;
 					}
-
 					if ($page == 1) {
 						include('pages/accueil.php');
 					} elseif ($page == 2) {
@@ -106,8 +101,6 @@ include('./pages/bdd.php'); //(chemin à adapter)
 					// redirection vers le site (chemin à adapter)
 					header('Location: ../index.php?page=1');
 				}
-
-
 				?>
 			</div>
 			<!--                                    fin page content                                           -->
@@ -119,7 +112,6 @@ include('./pages/bdd.php'); //(chemin à adapter)
 				<p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
 			</footer>
 			<!-- fin footer -->
-
 		</div>
 	</div>
 

@@ -1,5 +1,4 @@
 <div class="row">
-
     <?php
 
     $queryCount = "SELECT COUNT(*) FROM category";
@@ -16,10 +15,7 @@
         $req2 = $bdd->prepare($query2);
         $req2->execute();
         $res = $req2->fetch();
-        // var_dump($data);
-        // var_dump($res);
     ?>
-
         <div class="col-6 col-xl-6 stretch-card">
             <div class="row flex-grow">
                 <div class="col-md-6 grid-margin stretch-card">
@@ -41,13 +37,10 @@
 
     <?php
     }
-
     ?>
 </div>
 
 <!-- MESSAGE CONTACT -->
-
-
 
 <div class="row">
     <div class="col-lg-6 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
@@ -57,7 +50,6 @@
                     <h6 class="card-title mb-0">Inbox</h6>
                 </div>
                 <?php
-
                 $queryContact = "SELECT * FROM contact";
                 $reqContact = $bdd->prepare($queryContact);
                 $reqContact->execute();
@@ -76,7 +68,6 @@
                     </div>
                 <?php
                 }
-
                 ?>
             </div>
         </div>
