@@ -28,11 +28,9 @@
         } else if ($page == 2) {
             include('../views/location.php');
         } else if ($page == 3) {
-            include('../views/location.php');
+            include('../views/estimation.php');
         } else if ($page == 4) {
-            include('pages/estimation.php');
-        } else if ($page == 5) {
-            include('pages/contact.php');
+            include('../views/contact.php');
         }
     } else {
         include('../views//home.php');

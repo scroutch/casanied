@@ -1,15 +1,8 @@
 <?php
 
-$query = 'SELECT COUNT(*) FROM product WHERE category_id=1';
-$req = $bdd->prepare($query);
-$req->execute();
-$data = $req->fetch();
+require '../models/bdd.php';
+require '../models/functions.php';
 
-$query2 = 'SELECT COUNT(*) FROM product WHERE category_id=2';
-$req2 = $bdd->prepare($query2);
-$req2->execute();
-$data2 = $req2->fetch();
-// var_dump($data);
 ?>
 <div class="container-fluid d-flex justify-content-evenly align-items-center flex-wrap onglet">
     <div class="container-onglets">
@@ -19,7 +12,11 @@ $data2 = $req2->fetch();
             <button class="tab-link" data-ref="estimation">Estimation</button>
         </div>
         <form action="index.php?page=1&category=1" method="post" class="tab-body active" data-id="location">
-            <p><?php echo $data[0]; ?> biens à louer</p>
+            <?php
+            $category = 1;
+            $dataLoc = countProductByCategory($bdd, $category);
+            ?>
+            <p><?php echo $dataLoc[0]; ?> biens à louer</p>
             <input type="text" class="lieu" name="ville" placeholder="Ville, ..." required>
             <div class="inputBudget">
                 <input type="text" class="budget" name="price" placeholder="Budget max">
@@ -70,7 +67,11 @@ $data2 = $req2->fetch();
             <input type="submit" value="CHERCHER">
         </form>
         <form action="index.php?page=1&category=2" method="post" class="tab-body" data-id="vente">
-            <p><?php echo $data2[0]; ?> biens à vendre</p>
+            <?php
+            $category = 2;
+            $dataSell = countProductByCategory($bdd, $category);
+            ?>
+            <p><?php echo $dataSell[0]; ?> biens à vendre</p>
             <input type="text" class="lieu" name="ville" placeholder="Ville, ..." required>
             <div class="inputBudget">
                 <input type="text" class="budget" name="price" placeholder="Budget max">

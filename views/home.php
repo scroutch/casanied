@@ -38,7 +38,7 @@ if (isset($dataSearch) && $dataSearch != NULL) {
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <a href="pages/ficheProduit.php">En savoir plus</a>
-                    <a href="index.php?page=5"><i class="fa-regular fa-envelope p-2"></i></a>
+                    <a href="index.php?page=4"><i class="fa-regular fa-envelope p-2"></i></a>
                     <!-- <i class="fa-regular fa-heart p-2"></i> -->
                 </div>
             </div>
@@ -67,7 +67,7 @@ if (isset($dataSearch) && $dataSearch != NULL) {
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <a href="pages/ficheProduit.php">En savoir plus</a>
-                    <a href="index.php?page=5"><i class="fa-regular fa-envelope p-2"></i></a>
+                    <a href="index.php?page=4"><i class="fa-regular fa-envelope p-2"></i></a>
                     <!-- <i class="fa-regular fa-heart p-2"></i> -->
                 </div>
             </div>

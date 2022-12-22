@@ -20,6 +20,7 @@ if ($categorie == 1) {
     include('products.php');
 } else {
     echo 'Une erreur est survenue. Veuillez réessayer ultérieurement.';
+    header('Location: index.php?page=1');
 }
 
 ?>
