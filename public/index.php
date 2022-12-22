@@ -26,9 +26,9 @@
         if ($page == 1) {
             include('../views/home.php');
         } else if ($page == 2) {
-            include('pages/location.php');
+            include('../views/location.php');
         } else if ($page == 3) {
-            include('pages/vente.php');
+            include('../views/location.php');
         } else if ($page == 4) {
             include('pages/estimation.php');
         } else if ($page == 5) {
