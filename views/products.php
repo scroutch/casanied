@@ -5,7 +5,7 @@
         include('modal.php');
     ?>
         <div class="card m-2">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $product['id'] ?>"><img class="card-img-top" src="../BO_Project/assets/upload/<?php echo $product['img'] ?>" alt="Card image cap"></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $product['id'] ?>"><img class="card-img-top" src="../BO_Project/public/assets/upload/<?php echo $product['img'] ?>" alt="Card image cap"></a>
             <div class="card-body d-flex flex-column justify-content-around">
                 <h5 class="card-title d-flex justify-content-between"><?php echo $product['title'] ?><span><?php echo $product['price'] ?> €</span></h5>
                 <p class="card-text d-flex justify-content-center"><i class="fa-solid fa-location-dot"></i><span class="ps-2"><?php echo $product['rue'] ?>, <?php echo $product['ville'] ?></span></p>
