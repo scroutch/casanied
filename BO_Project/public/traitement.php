@@ -1,5 +1,5 @@
 <?php
-include('../pages/bdd.php'); //(chemin à adapter)
+include('../models/bdd.php'); //(chemin à adapter)
 
 $username = $_POST['email'];
 $mdp = $_POST['password'];

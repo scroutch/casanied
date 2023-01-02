@@ -1,20 +1,26 @@
+<?php
+
+require '../models/bdd.php';
+require '../models/functions.php';
+
+?>
+
 <div class="row">
     <?php
 
-    $queryCount = "SELECT COUNT(*) FROM category";
-    $reqCount = $bdd->prepare($queryCount);
-    $reqCount->execute();
-    $dataCount = $reqCount->fetch();
+    $table = "product";
+    $table2 = "category";
+    $table3 = "contact";
+    $champ = "category_id";
+    $champ2 = "id";
 
-    for ($i = 1; $i <= $dataCount[0]; $i++) {
-        $query = "SELECT COUNT(*) FROM product WHERE category_id='{$i}'";
-        $req = $bdd->prepare($query);
-        $req->execute();
-        $data = $req->fetch();
-        $query2 = "SELECT * FROM category WHERE id='{$i}'";
-        $req2 = $bdd->prepare($query2);
-        $req2->execute();
-        $res = $req2->fetch();
+    $data = countFromCat($bdd, $table2);
+
+    for ($i = 1; $i <= $data[0]; $i++) {
+
+        $dataCount = countProd($bdd, $table, $champ, $i);
+        $res = cat($bdd, $table2, $champ2, $i);
+
     ?>
         <div class="col-6 col-xl-6 stretch-card">
             <div class="row flex-grow">
@@ -26,7 +32,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6 col-md-12 col-xl-5">
-                                    <h3 class="mb-2"><?php echo $data[0]; ?></h3>
+                                    <h3 class="mb-2"><?php echo $dataCount[0]; ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -50,19 +56,19 @@
                     <h6 class="card-title mb-0">Inbox</h6>
                 </div>
                 <?php
-                $queryContact = "SELECT * FROM contact";
-                $reqContact = $bdd->prepare($queryContact);
-                $reqContact->execute();
-                while ($dataContact = $reqContact->fetch()) {
+
+                $dataContact = listMessage($bdd, $table3);
+
+                foreach ($dataContact as $data) {
                 ?>
                     <div class="d-flex flex-column">
                         <a href="#" class="d-flex align-items-center border-bottom pb-3">
                             <div class="w-100">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="text-body mb-2"><?php echo $dataContact['name'] . " " . $dataContact['firstName']; ?></h6>
-                                    <p class="text-muted tx-12"><?php echo $dataContact['date_envoi']; ?></p>
+                                    <h6 class="text-body mb-2"><?php echo $data['name'] . " " . $data['firstName']; ?></h6>
+                                    <p class="text-muted tx-12"><?php echo $data['date_envoi']; ?></p>
                                 </div>
-                                <p class="text-muted tx-13"><?php echo $dataContact['message']; ?></p>
+                                <p class="text-muted tx-13"><?php echo $data['message']; ?></p>
                             </div>
                         </a>
                     </div>

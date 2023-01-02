@@ -1,5 +1,5 @@
 <?php
-include('../pages/bdd.php');
+include('../models/bdd.php');
 
 // session_unset();
 // var_dump($_SESSION);

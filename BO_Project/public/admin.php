@@ -74,32 +74,32 @@ include('../models/bdd.php'); //(chemin à adapter)
 						$page = 1;
 					}
 					if ($page == 1) {
-						include('pages/accueil.php');
+						include('../views/accueil.php');
 					} elseif ($page == 2) {
-						include('pages/categorie.php');
+						include('../views/categorie.php');
 					} elseif ($page == 3) {
-						include('pages/sousCat.php');
+						include('../views/sousCat.php');
 					} elseif ($page == 4) {
-						include('pages/produits.php');
+						include('../views/produits.php');
 					} elseif ($page == 5) {
-						include('pages/collab.php');
+						include('../views/collab.php');
 					} elseif ($page == 6) {
-						include('pages/addCollab.php');
+						include('../views/addCollab.php');
 					} elseif ($page == 7) {
-						include('pages/confirmDelete.php');
+						include('../views/confirmDelete.php');
 					} elseif ($page == 8) {
-						include('pages/addProduct.php');
+						include('../views/addProduct.php');
 					} elseif ($page == 9) {
-						include('pages/target_product.php');
+						include('../views/target_product.php');
 					} elseif ($page == 10) {
-						include('pages/updatePicture.php');
+						include('../views/updatePicture.php');
 					} elseif ($page == 11) {
-						include('pages/target_picture.php');
+						include('../views/target_picture.php');
 					}
 				} else {
 					$_SESSION['message'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Vous n\'avez pas les droits pour accéder à cette zone</div>';
 					// redirection vers le site (chemin à adapter)
-					header('Location: ../index.php?page=1');
+					header('Location: ../../public/index.php?page=1');
 				}
 				?>
 			</div>
