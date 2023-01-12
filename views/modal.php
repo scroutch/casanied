@@ -8,7 +8,7 @@
                 </span>
             </div>
             <div class="modal-body">
-                <img class="card-img-top" src="../BO_Project/assets/upload/<?php echo $product['img'] ?>" alt="Card image cap">
+                <img class="card-img-top" src="../BO_Project/public/assets/upload/<?php echo $product['img'] ?>" alt="Card image cap">
                 <div class="card-body d-flex flex-column justify-content-around">
                     <p class="card-text d-flex justify-content-center p-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     <p class="card-text d-flex justify-content-center p-3"><i class="fa-solid fa-location-dot"></i><span class="ps-2"><?php echo $product['rue'] ?>, <?php echo $product['ville'] ?></span></p>

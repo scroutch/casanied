@@ -53,8 +53,6 @@ if ((isset($_POST['ville']) && $_POST['ville'] != null) &&
     } else {
         $dataSearch = search($bdd, $ville, $nb_bedroom, $maison, $appartement, $terrain, $immeuble, $category);
     }
-} else if (!$_POST) {
-    $dataProduct = recupProduct($bdd);
 } else {
-    $_SESSION['error'] = '<p>Aucun bien trouvé.</p>';
+    $dataProduct = recupProduct($bdd);
 }
