@@ -1,6 +1,7 @@
 <?php
 include('bdd.php');
 // var_dump($_POST);
+
 if ((isset($_POST['title']) && !empty($_POST['title'])) &&
     (isset($_POST['description']) && !empty($_POST['description'])) &&
     (isset($_POST['rue']) && !empty($_POST['rue'])) &&
@@ -39,8 +40,7 @@ if ((isset($_POST['title']) && !empty($_POST['title'])) &&
             $_SESSION['error'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Le fichier selectionné n\'est pas une image.</div>';
             header('Location: admin.php?page=8');
         } else {
-            $imgDir = 'assets/upload/
-            ';
+            $imgDir = '../public/assets/upload/';
             $filename = 'prod-' . time();
             $picture = $imgDir . $filename . '.' . $ext_up;
             $tmp_file = $_FILES['img']['tmp_name'];

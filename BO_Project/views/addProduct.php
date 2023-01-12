@@ -35,7 +35,7 @@
         <?php } ?>
         <div class="form-group">
             <label for="rue">Description</label>
-            <textarea type="text" class="form-control" id="description" name="description" autocomplete="off" placeholder="description" rows=" 5" cols="33"" required><?php echo isset($id) ? $data['description'] : "" ?></textarea>
+            <textarea type="text" class="form-control" id="description" name="description" autocomplete="off" placeholder="description" rows=" 5" cols="33" required><?php echo isset($id) ? $data['description'] : "" ?></textarea>
         </div>
         <div class=" form-group">
             <label for="rue">Rue</label>
@@ -52,7 +52,7 @@
         <div class="form-group">
             <label for="nb_bedroom">Nombre de chambre</label>
             <input type="number" class="form-control" id="nb_bedroom" name="nb_bedroom" min="0" max="50" value="<?php echo isset($id) ? $data['nb_bedroom'] : "" ?>">
-            
+
         </div>
         <div class="form-group">
             <label for="nb_bathroom">Nombre de salle de bain</label>
