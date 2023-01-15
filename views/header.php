@@ -4,7 +4,7 @@
         <span class="line l2"></span>
         <span class="line l3"></span>
     </button>
-    <img src="../public/assets/img/logo.png" alt="">
+    <img src="../public/assets/img/logo_header.png" alt="">
     <nav>
         <ul id="menu-navigation" class="itemsmenu">
             <li class="menu-item"><a href="index.php?page=1">Accueil</a></li>
@@ -15,7 +15,7 @@
         </ul>
     </nav>
     <div id="langage">
-        <img src="../public/assets/img/icons/germanFlag.png" alt="icone de l'allemagne" class="germanFlag active">
-        <img src="../public/assets/img/icons/frenchFlag.png" alt="icone de la france" class="frenchFlag">
+        <!-- <img src="../public/assets/img/icons/germanFlag.png" alt="icone de l'allemagne" class="germanFlag active">
+        <img src="../public/assets/img/icons/frenchFlag.png" alt="icone de la france" class="frenchFlag"> -->
     </div>
 </header>
