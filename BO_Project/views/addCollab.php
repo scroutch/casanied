@@ -1,3 +1,9 @@
+<?php
+
+require '../models/bdd.php';
+require '../models/functions.php';
+
+?>
 <div class="row">
     <?php
     if (isset($_SESSION['error'])) {
@@ -8,7 +14,7 @@
 </div>
 <div class="card-body">
     <h6 class="card-title">Ajouter un collaborateur</h6>
-    <form class="forms-sample" method="POST" action="./pages/target_collab.php">
+    <form class="forms-sample" method="POST" action="../controlers/target_collab.php">
         <div class="form-group">
             <label for="name">Nom</label>
             <input type="text" class="form-control" id="name" name="name" autocomplete="off" placeholder="Nom" required>

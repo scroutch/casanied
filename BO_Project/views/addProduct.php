@@ -1,3 +1,9 @@
+<?php
+
+require '../models/bdd.php';
+require '../models/functions.php';
+
+?>
 <div class="row">
     <?php
     if (isset($_SESSION['error'])) {
@@ -7,22 +13,15 @@
     ?>
 </div>
 <div class="card-body">
-    <h6 class="card-title"><?php echo isset($_GET['id']) ? "Modifier un bien" : "Ajouter un bien" ?></h6>
+    <h6 class="card-title"><?php echo isset($_POST['id']) ? "Modifier un bien" : "Ajouter un bien" ?></h6>
     <?php
-    if (isset($_GET['id'])) {
-        $query = 'SELECT * FROM product WHERE id=:id';
-        $id = $_GET['id'];
-        $req = $bdd->prepare($query);
-        $req->bindValue(':id', $id, PDO::PARAM_INT);
-        $req->execute();
-
-        $data = $req->fetch();
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+        $table = "product";
+        $data = selectProd($bdd, $table, $id);
     }
     ?>
-
-    <form class="forms-sample" method="POST" action="admin.php?page=9<?php if (isset($_GET['id'])) {
-                                                                            echo "&&id=" . $_GET['id'];
-                                                                        } ?>" enctype="multipart/form-data">
+    <form class="forms-sample" method="POST" action="../controlers/target_product.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Titre</label>
             <input type="text" class="form-control" id="title" name="title" autocomplete="off" placeholder="Titre" value="<?php echo isset($id) ? $data['title'] : "" ?>" required>
@@ -81,7 +80,7 @@
             <select class="form-select" aria-label="Default select example" name="category" id="category" required>
                 <option selected value="<?php echo isset($id) ? $data['category_id'] : "Choississez la catégorie" ?>">
                     <?php
-                    if (isset($id)) {
+                    if (isset($_POST['id'])) {
                         if ($data['category_id'] == 1) {
                             echo 'Locations';
                         } else if ($data['category_id'] == 2) {
@@ -90,14 +89,13 @@
                             echo 'Choississez la catégorie';
                         }
                     }
-
                     ?>
                 </option>
                 <option value="1">Locations</option>
                 <option value="2">Ventes</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary mr-2" href="admin.php?page=4"><?php echo isset($_GET['id']) ? "Modifier" : "Ajouter" ?></button>
+        <button type="submit" class="btn btn-primary mr-2" href="../public/admin.php?page=4"><?php echo isset($_POST['id']) ? "Modifier" : "Ajouter" ?></button>
         <button class="btn btn-light">Annuler</button>
     </form>
 </div>

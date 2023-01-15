@@ -1,6 +1,12 @@
+<?php
+
+require '../models/bdd.php';
+require '../models/functions.php';
+
+?>
 <div class="row">
     <?php
-    $_SESSION['link'] = './pages/deleteProduct.php';
+    $_SESSION['link'] = '../controlers/deleteProduct.php';
     if (isset($_SESSION['error'])) {
         echo $_SESSION['error'];
         unset($_SESSION['error']);
@@ -50,72 +56,66 @@
                                     </thead>
                                     <tbody>
                                         <?php
-
-                                        $query = 'SELECT * FROM product ORDER BY created_date DESC';
-                                        $req = $bdd->prepare($query);
-                                        $req->execute();
-                                        while ($data = $req->fetch()) {
+                                        $table = "product";
+                                        $champ = "created_date";
+                                        $data = listElement($bdd, $table, $champ);
+                                        foreach ($data as $product) {
                                         ?>
                                             <tr>
-                                                <th><?php echo htmlspecialchars($data['id']) ?></th>
-                                                <?php if (htmlspecialchars($data['category_id']) == 1) { ?>
+                                                <th><?php echo htmlspecialchars($product['id']) ?></th>
+                                                <?php if (htmlspecialchars($product['category_id']) == 1) { ?>
                                                     <th><?php echo 'location' ?></th>
                                                 <?php } else { ?>
                                                     <th><?php echo 'vente' ?></th>
                                                 <?php } ?>
                                                 <td>
-                                                    <a href="admin.php?page=10&id=<?php echo htmlspecialchars($data['id']) ?>" title="Modifier les images">
-                                                        <img src="./assets/upload/<?php echo htmlspecialchars($data['img']) ?>">
-                                                        <i class="fa-solid fa-pen"></i>
-                                                    </a>
+                                                    <form action="../public/admin.php?page=10" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
+                                                        <img src="../public/assets/upload/<?php echo htmlspecialchars($product['img']) ?>">
+                                                        <button type="submit" class="btn btn-transparent btn-update-img" name="submit">
+                                                            <i class="fa-solid fa-pen"></i>
+                                                        </button>
+                                                    </form>
                                                 </td>
-                                                <td><?php echo htmlspecialchars($data['title']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['rue']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['code_postal']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['ville']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['nb_bedroom']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['nb_bathroom']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['surface']) . ' m²' ?></td>
-                                                <td><?php echo htmlspecialchars($data['type_product']) ?></td>
-                                                <td><?php echo htmlspecialchars($data['price']) . ' €' ?></td>
-                                                <td><?php echo htmlspecialchars($data['created_date']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['title']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['rue']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['code_postal']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['ville']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['nb_bedroom']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['nb_bathroom']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['surface']) . ' m²' ?></td>
+                                                <td><?php echo htmlspecialchars($product['type_product']) ?></td>
+                                                <td><?php echo htmlspecialchars($product['price']) . ' €' ?></td>
+                                                <td><?php echo htmlspecialchars($product['created_date']) ?></td>
                                                 <td>
-                                                    <a href="admin.php?page=8&id=<?php echo htmlspecialchars($data['id']) ?>" title="modifier">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
-                                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                                        </svg>
-                                                    </a>
+                                                    <form action="../public/admin.php?page=8" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
+                                                        <button type="submit" class="btn btn-dark" value="update" name="submit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                                 <td>
-                                                    <a href="admin.php?page=7&id=<?php echo htmlspecialchars($data['id']) ?>" title="supprimer">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete">
-                                                            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
-                                                            <line x1="18" y1="9" x2="12" y2="15"></line>
-                                                            <line x1="12" y1="9" x2="18" y2="15"></line>
-                                                        </svg>
-                                                    </a>
+                                                    <form action="../public/admin.php?page=7" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($product['id']) ?>">
+                                                        <button type="submit" class="btn btn-dark" value="delete" name="submit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete">
+                                                                <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+                                                                <line x1="18" y1="9" x2="12" y2="15"></line>
+                                                                <line x1="12" y1="9" x2="18" y2="15"></line>
+                                                            </svg>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
-
                                         <?php
                                         }
                                         ?>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12 col-md-7">
-                                <div class="dataTables_paginate paging_simple_numbers" id="dataTableExample_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button page-item previous disabled" id="dataTableExample_previous"><a href="#" aria-controls="dataTableExample" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                                        <li class="paginate_button page-item active"><a href="#" aria-controls="dataTableExample" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                        <li class="paginate_button page-item "><a href="#" aria-controls="dataTableExample" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                                        <li class="paginate_button page-item "><a href="#" aria-controls="dataTableExample" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                                        <li class="paginate_button page-item next" id="dataTableExample_next"><a href="#" aria-controls="dataTableExample" data-dt-idx="4" tabindex="0" class="page-link">Next</a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>

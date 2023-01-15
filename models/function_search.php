@@ -86,7 +86,7 @@ function search($bdd, $ville, $nb_bedroom, $maison, $appartement, $terrain, $imm
     return $dataSearch;
 }
 
-//fonction pour récupérer les derniers élèments ajoutés en BDD
+//fonction pour récupérer tous les élèments ajoutés en BDD
 
 function recupProduct($bdd)
 {
