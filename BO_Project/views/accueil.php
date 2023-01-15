@@ -22,13 +22,15 @@ require '../models/functions.php';
         $res = cat($bdd, $table2, $champ2, $i);
 
     ?>
-        <div class="col-6 col-xl-6 stretch-card">
+        <div class="col-xl-12 col-md-6 stretch-card">
             <div class="row flex-grow">
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-baseline">
-                                <h6 class="card-title mb-0"><?php echo "Nombre de biens en " . $res['name']; ?></h6>
+                                <a href="admin.php?page=4">
+                                    <h6 class="card-title mb-0"><?php echo "Nombre de biens en " . $res['name']; ?></h6>
+                                </a>
                             </div>
                             <div class="row">
                                 <div class="col-6 col-md-12 col-xl-5">
@@ -40,12 +42,25 @@ require '../models/functions.php';
                 </div>
             </div>
         </div>
-
     <?php
     }
     ?>
 </div>
-
+<div class="col-xl-12 col-md-6 stretch-card visible">
+    <div class="row flex-grow">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <a href="admin.php?page=5">
+                            <h6 class="card-title mb-0">Accès aux membres administrateurs</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- MESSAGE CONTACT -->
 
 <div class="row">

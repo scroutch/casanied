@@ -24,3 +24,13 @@
 .sidebar .sidebar-header .sidebar-brand span {
     color: var(--main-color);
 }
+
+.visible {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .visible {
+        display: block;
+    }
+}

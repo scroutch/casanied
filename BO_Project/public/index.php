@@ -46,18 +46,18 @@ include('../models/bdd.php');
 			?>
 		</div>
 		<div class="row">
-			<div class="col-6 mx-auto mt-5">
+			<div class="col-xl-6 col-md-12 mx-auto mt-5">
 				<form method="POST" action="traitement.php">
 					<h1 class="text-center mb-5">Accès panel admin</h1>
 					<div class="mb-3 row">
-						<label for="email" class="col-2 col-form-label">Email</label>
-						<div class="col-10">
+						<label for="email" class="col-3 col-form-label">Email</label>
+						<div class="col-8">
 							<input type="email" class="form-control" id="email" name="email">
 						</div>
 					</div>
 					<div class="mb-3 row">
-						<label for="password" class="col-2 col-form-label">Password</label>
-						<div class="col-10">
+						<label for="password" class="col-3 col-form-label">Password</label>
+						<div class="col-8">
 							<input type="password" class="form-control" id="password" name="password">
 						</div>
 					</div>

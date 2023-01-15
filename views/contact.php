@@ -4,7 +4,7 @@ require '../models/bdd.php';
 
 ?>
 
-<div class="container-fluid" id="contact">
+<div class="container-fluid col-xl-6 col-md-12 mx-auto mt-5" id="contact">
     <div class="row">
         <?php
 
