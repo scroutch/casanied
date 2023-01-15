@@ -1,5 +1,7 @@
 <?php
 
+// select all product by category
+
 function product($bdd, $cat)
 {
     $queryVentes = 'SELECT * FROM product WHERE category_id = :cat';
@@ -9,6 +11,8 @@ function product($bdd, $cat)
     $dataProd = $req->fetchAll();
     return $dataProd;
 }
+
+//add message in BDD
 
 function contact($bdd, $name, $firstName, $tel, $mail, $message)
 {
@@ -21,6 +25,8 @@ function contact($bdd, $name, $firstName, $tel, $mail, $message)
     $req->bindValue(':message', $message, PDO::PARAM_STR);
     $req->execute();
 }
+
+//count number of product by category
 
 function countProductByCategory($bdd, $category)
 {
