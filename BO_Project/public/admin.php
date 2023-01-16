@@ -10,7 +10,7 @@ include('../models/bdd.php'); //(chemin à adapter)
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Panel admin</title>
-	<link rel="stylesheet" href="../../assets/fontawesome-free-6.2.0/css/all.css">
+	<link rel="stylesheet" href="../../public/assets/fontawesome-free-6.2.0/css/all.css">
 	<!-- core:css -->
 	<link rel="stylesheet" href="../public/assets/vendors/core/core.css">
 	<!-- endinject -->

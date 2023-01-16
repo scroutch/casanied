@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/bootstrap-5.2.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/fontawesome-free-6.2.0/css/all.css">
+    <link rel="stylesheet" href="./assets/bootstrap-5.2.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fontawesome-free-6.2.0/css/all.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
@@ -40,7 +40,7 @@
     ?>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="../assets/bootstrap-5.2.2/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/bootstrap-5.2.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     <script src="./assets/js/menuBurger.js"></script>
     <script src="./assets/js/langage.js"></script>

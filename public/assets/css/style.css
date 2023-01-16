@@ -456,10 +456,6 @@ input[type="checkbox"].checkbox:checked::before {
         font-family: var(--font-text);
         font-size: var(--font-size-text);
     }
-
-    .captcha {
-        width: 70%;
-    }
 }
 
 @media screen and (max-width: 400px) {
@@ -483,8 +479,7 @@ input[type="checkbox"].checkbox:checked::before {
         width: 90%;
     }
 
-    #contact textarea,
-    .captcha {
+    #contact textarea {
         width: 90%;
     }
 }
