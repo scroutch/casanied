@@ -1,0 +1,2 @@
+RewriteEngine on
+RedirectPermanent /public/index.php https://stage.ceciledev.fr/
