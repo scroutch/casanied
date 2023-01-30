@@ -1,6 +1,6 @@
 <?php
 
-require '../models/bdd.php';
+
 require '../controlers/homeControler.php';
 
 include('onglet.php');

@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
 
 
 try {
-    // $bdd = new PDO('mysql:host=127.0.0.1:3306;dbname=casanied;charset=utf8', 'root', '');
-    $bdd = new PDO('mysql:mysql.hostinger.com;dbname=u548150219_casanied;charset=utf8', 'u548150219_admin', 'Jv7ww6j9!');
+    $bdd = new PDO('mysql:host=127.0.0.1:3306;dbname=casanied2;charset=utf8', 'root', '');
+    // $bdd = new PDO('mysql:mysql.hostinger.com;dbname=u548150219_casanied;charset=utf8', 'u548150219_admin', 'Jv7ww6j9!');
     $bdd->setATTRIBUTE(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $bdd->setATTRIBUTE(PDO::ERRMODE_SILENT, PDO::ERRMODE_WARNING);
     $bdd->setATTRIBUTE(PDO::ATTR_EMULATE_PREPARES, false);

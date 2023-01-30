@@ -79,6 +79,10 @@ header .menu-item {
     padding: 0 1rem;
 }
 
+.svg-inline--fa {
+    height: 2em;
+}
+
 header .frenchFlag,
 header .germanFlag {
     display: none;
@@ -361,6 +365,16 @@ input[type="checkbox"].checkbox:checked::before {
     width: 95%;
     margin: 3rem auto;
     border: 2px solid var(--secondary-color);
+}
+
+/***CONNEXION***/
+#connect form {
+    margin-top: 150px;
+}
+
+/***SUBSCRIBE***/
+#subscribe form {
+    margin-top: 150px;
 }
 
 /******MEDIA QUERIES******/
