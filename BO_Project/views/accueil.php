@@ -89,3 +89,10 @@ require '../models/functions.php';
         </div>
     </div>
 </div>
+
+<!-- retour au site -->
+<div class="row">
+    <div class="col-xs-12">
+        <a class="btn btn-outline-dark" href="../../public/index.php?page=1">Revenir sur le site</a>
+    </div>
+</div>
