@@ -1,3 +1,7 @@
+<?php
+require '../models/bdd.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
+    <!-- <meta name="robots" content="noindex"> -->
     <link rel="stylesheet" href="./assets/bootstrap-5.2.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.2.0/css/all.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
@@ -32,6 +36,10 @@
             include('../views/estimation.php');
         } else if ($page == 4) {
             include('../views/contact.php');
+        } else if ($page == 5) {
+            include('../views/connect.php');
+        } else if ($page == 6) {
+            include('../views/subscribe.php');
         }
     } else {
         include('../views//home.php');

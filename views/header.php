@@ -14,8 +14,23 @@
             <li class="menu-item"><a href="index.php?page=4">Contact</a></li>
         </ul>
     </nav>
-    <div id="langage">
+    <div class="dropdown" id="langage">
         <!-- <img src="../public/assets/img/icons/germanFlag.png" alt="icone de l'allemagne" class="germanFlag active">
         <img src="../public/assets/img/icons/frenchFlag.png" alt="icone de la france" class="frenchFlag"> -->
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user-tie"></i>
+        </button>
+        <ul class="dropdown-menu">
+            <?php if (isset($_SESSION['id'])) { ?>
+                <li><?php
+                    if (isset($_SESSION['firstName'])) {
+                        echo '<strong>Bonjour, ' . $_SESSION['firstName'] . '</strong>';
+                    } ?></li>
+                <li><a class="dropdown-item" href="index.php?page=5">Mes favoris</a></li>
+                <li><a class="dropdown-item" href="../controlers/logout.php">Se déconnecter</a></li>
+            <?php } else { ?>
+                <li><a class="dropdown-item" href="index.php?page=5">Connexion</a></li>
+            <?php } ?>
+        </ul>
     </div>
 </header>
