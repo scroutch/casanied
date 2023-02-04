@@ -16,14 +16,17 @@ if (
     $response = $_POST['g-recaptcha-response'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=6LdOR78iAAAAANzrXjIRZapF6g54jv3MlH2x0DQx&response=$response";
     $file = file_get_contents($url);
-    // echo $file;
     $name = htmlspecialchars($_POST['name']);
     $firstName = htmlspecialchars($_POST['firstName']);
     $tel = htmlspecialchars($_POST['tel']);
     $mail = htmlspecialchars($_POST['mail']);
     $message = htmlspecialchars($_POST['message']);
+    // $message = str_replace("\n.", "\n..", $message);
+    // $objet = "message reçu de " . $firstName . " " . $name;
 
     contact($bdd, $name, $firstName, $tel, $mail, $message);
+    // mail("cecile.devweb@gmail.com", $objet, $message);
+
 
     $_SESSION['errorMess'] = '<div class="alert alert-success text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Votre message a bien été envoyé.</div>';
     header('Location: ../public/index.php?page=4');
