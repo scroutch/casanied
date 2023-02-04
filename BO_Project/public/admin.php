@@ -67,7 +67,7 @@ include('../models/bdd.php'); //(chemin à adapter)
 			<!--                                      page content                                             -->
 			<div class="page-content">
 				<?php
-				if (isset($_SESSION['admin']) && $_SESSION['admin'] == 'ADMIN') {
+				if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
 					if (isset($_GET['page'])) {
 						$page = $_GET['page'];
 					} else {

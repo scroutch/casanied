@@ -31,6 +31,11 @@
                         if (isset($_SESSION['firstName'])) {
                             echo '<strong>Bonjour, ' . $_SESSION['firstName'] . '</strong>';
                         } ?></li>
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
+                    ?>
+                        <li><a class="dropdown-item" href="../BO_Project/public/admin.php?page=1">Panel admin</a></li>
+                    <?php
+                    } ?>
                     <li><a class="dropdown-item" href="index.php?page=5">Mes favoris</a></li>
                     <li><a class="dropdown-item" href="../controlers/logout.php">Se déconnecter</a></li>
                 <?php } else { ?>

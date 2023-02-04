@@ -17,15 +17,14 @@ if (
             $_SESSION['id'] = $result['id'];
             $_SESSION['role'] = $result['role_id'];
             $_SESSION['firstName'] = $result['firstName'];
-            if ($_SESSION['id']) {
-                if ($_SESSION['role'] == 2) {
+
+            if (isset($_SESSION['id'])) {
+                if ($_SESSION['role'] == 1) {
+                    header('Location: ../BO_Project/public/admin.php?page=1');
+                } else {
                     header('Location: ../public/index.php?page=1');
-                } else if ($_SESSION['role'] == 1) {
-                    header('Location: ../BO_Project/public/index.php?page=1');
                 }
             }
-            // var_dump($_SESSION['id']);
-
         } else {
             $_SESSION['errorMess'] = '<div class="alert alert-danger text-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-3"></i>Votre mot de passe est mauvais.</div>';
             header('Location= ../public/index.php?page=5');

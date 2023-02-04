@@ -4,6 +4,7 @@
 require '../controlers/homeControler.php';
 
 include('onglet.php');
+var_dump($_SESSION);
 
 ?>
 

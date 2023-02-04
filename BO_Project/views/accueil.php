@@ -13,14 +13,11 @@ require '../models/functions.php';
     $table3 = "contact";
     $champ = "category_id";
     $champ2 = "id";
-
     $data = countFromCat($bdd, $table2);
 
     for ($i = 1; $i <= $data[0]; $i++) {
-
         $dataCount = countProd($bdd, $table, $champ, $i);
         $res = cat($bdd, $table2, $champ2, $i);
-
     ?>
         <div class="col-xl-12 col-md-6 stretch-card">
             <div class="row flex-grow">
@@ -71,9 +68,7 @@ require '../models/functions.php';
                     <h6 class="card-title mb-0">Inbox</h6>
                 </div>
                 <?php
-
                 $dataContact = listMessage($bdd, $table3);
-
                 foreach ($dataContact as $data) {
                 ?>
                     <div class="d-flex flex-column">
