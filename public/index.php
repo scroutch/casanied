@@ -42,7 +42,7 @@ require '../models/bdd.php';
             include('../views/subscribe.php');
         }
     } else {
-        include('../views//home.php');
+        include('../views/home.php');
     }
 
     include('../views/footer.php');

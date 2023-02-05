@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 30 jan. 2023 à 15:13
+-- Généré le : dim. 05 fév. 2023 à 23:31
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -32,7 +32,15 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'locations'),
+(2, 'ventes');
 
 -- --------------------------------------------------------
 
@@ -50,7 +58,14 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `message` text NOT NULL,
   `date_envoi` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `firstName`, `tel`, `mail`, `message`, `date_envoi`) VALUES
+(1, 'Dupont', 'Maurice', '0600000000', 'maurice@test.com', 'test envoie', '2023-02-04 13:45:16');
 
 -- --------------------------------------------------------
 
@@ -83,14 +98,15 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `role_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `role_id_fk` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `membre`
 --
 
 INSERT INTO `membre` (`id`, `name`, `firstName`, `email`, `password`, `date_ajout`, `role_id`) VALUES
-(1, 'Duhain', 'Cécile', 'cecile.duhain@gmail.com', '$2y$10$x2GvoFfWLfhsVd41ciLbFuel7o9SCU1OC.GaCugNmwKqnkqGdZRJy', '2023-01-30 15:56:08', 2);
+(1, 'Duhain', 'Cécile', 'cecile.duhain@gmail.com', '$2y$10$x2GvoFfWLfhsVd41ciLbFuel7o9SCU1OC.GaCugNmwKqnkqGdZRJy', '2023-01-30 15:56:08', 2),
+(2, 'Mammoliti', 'Grégory', 'greg@test.com', '$2y$10$K.PIqwMLuU0bUnieSvNgqOJ6hn0fRJ7P8e.TM5E5NGKrBjjRZqm.m', '2023-02-04 12:10:47', 1);
 
 -- --------------------------------------------------------
 
@@ -116,7 +132,14 @@ CREATE TABLE IF NOT EXISTS `product` (
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `product`
+--
+
+INSERT INTO `product` (`id`, `title`, `img`, `description`, `rue`, `code_postal`, `ville`, `nb_bedroom`, `nb_bathroom`, `surface`, `type_product`, `price`, `created_date`, `category_id`) VALUES
+(1, 'Maison de campagne', 'prod-1675635552.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '3 rue des jambonneau', '57310', 'bousse', 4, 2, 212, 'Maison', 325000, '2023-02-05 23:19:12', 2);
 
 -- --------------------------------------------------------
 
