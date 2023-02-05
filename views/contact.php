@@ -21,10 +21,10 @@
             <input type="text" name="firstName" id="firstName" placeholder="Entrez votre prénom" required>
         </div>
         <div class="perso d-flex justify-content-between">
-            <input type="tel" name="tel" id="tel" placeholder="Entrez votre tel" required>
+            <input type="tel" pattern="0[1-9][0-9]{8}" name="tel" id="tel" placeholder="Entrez votre tel" required>
             <input type="email" name="mail" id="mail" placeholder="Entrez votre email" required>
         </div>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message" required></textarea>
+        <textarea name="message" id="message" cols="30" rows="10" maxlength="255" placeholder="Entrez votre message" required></textarea>
         <div class="captcha d-flex justify-content-center align-items-center">
             <div class="g-recaptcha" data-sitekey="6LdOR78iAAAAAAHd2WHsNRc-CavtNBo5TCjJJYuQ"></div>
         </div>
