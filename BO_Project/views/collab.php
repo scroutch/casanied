@@ -41,7 +41,7 @@ require '../models/functions.php';
                         </thead>
                         <tbody>
                             <?php
-                            $table = "admin";
+                            $table = "membre";
                             $champ = "date_ajout";
                             $data = listElement($bdd, $table, $champ);
                             foreach ($data as $admin) {
@@ -52,7 +52,7 @@ require '../models/functions.php';
                                     <td><?php echo htmlspecialchars($admin['firstName']) ?></td>
                                     <td><?php echo htmlspecialchars($admin['email']) ?></td>
                                     <td><?php echo htmlspecialchars($admin['date_ajout']) ?></td>
-                                    <?php if ($admin['email'] != "greg@casanied.com") { ?>
+                                    <?php if ($admin['email'] != "greg@test.com") { ?>
                                         <td>
                                             <form action="../public/admin.php?page=7" method="post">
                                                 <input type="hidden" name="id" value="<?php echo $admin['id']; ?>">

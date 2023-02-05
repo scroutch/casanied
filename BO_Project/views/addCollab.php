@@ -15,27 +15,51 @@ require '../models/functions.php';
 <div class="card-body">
     <h6 class="card-title">Ajouter un collaborateur</h6>
     <form class="forms-sample" method="POST" action="../controlers/target_collab.php">
-        <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" class="form-control" id="name" name="name" autocomplete="off" placeholder="Nom" required>
+        <small class="text-danger"><?php if (isset($_SESSION['error_empty'])) {
+                                        echo $_SESSION['error_empty'];
+                                        unset($_SESSION['error_empty']);
+                                    } ?></small>
+        <div class="mb-3">
+            <label for="name" class="form-label">Votre nom</label>
+            <input type="text" class="form-control" id="name" name="name">
+            <small class="text-danger"><?php if (isset($_SESSION['error_name'])) {
+                                            echo $_SESSION['error_name'];
+                                            unset($_SESSION['error_name']);
+                                        } ?></small>
         </div>
-        <div class="form-group">
-            <label for="firstName">Prenom</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" autocomplete="off" placeholder="Prénom" required>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Votre prénom</label>
+            <input type="text" class="form-control" id="firstName" name="firstName">
+            <small class="text-danger"><?php if (isset($_SESSION['error_firstName'])) {
+                                            echo $_SESSION['error_firstName'];
+                                            unset($_SESSION['error_firstName']);
+                                        } ?></small>
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        <div class="mb-3">
+            <label for="email" class="form-label">Votre email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+            <small class="text-danger"><?php if (isset($_SESSION['error_email'])) {
+                                            echo $_SESSION['error_email'];
+                                            unset($_SESSION['error_email']);
+                                        } ?></small>
         </div>
-        <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" class="form-control" id="password" name="password" autocomplete="off" placeholder="Mot de passe" required>
+        <div class="mb-3">
+            <label for="password" class="form-label">Votre mot de passe</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <small class="text-danger"><?php if (isset($_SESSION['error_password'])) {
+                                            echo $_SESSION['error_password'];
+                                            unset($_SESSION['error_password']);
+                                        } ?></small>
         </div>
-        <div class="form-group">
-            <label for="confirmPassword">Confirmer le mot de passe</label>
-            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" autocomplete="off" placeholder="confirmer le mot de passe" required>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirmation de votre mot de passe</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+            <small class="text-danger"><?php if (isset($_SESSION['error_confirPassword'])) {
+                                            echo $_SESSION['error_confirPassword'];
+                                            unset($_SESSION['error_confirPassword']);
+                                        } ?></small>
         </div>
-        <button type="submit" class="btn btn-primary mr-2">Ajouter</button>
+        <button type="submit" class="btn btn-primary mr-2" name="submit">Ajouter</button>
         <button class="btn btn-light">Annuler</button>
     </form>
 </div>

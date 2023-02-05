@@ -154,3 +154,29 @@ function selectPic($bdd, $element, $table, $id)
     $data = $req->fetch();
     return $data;
 }
+
+//function to check if email doesn't exists in BDD
+
+function checkEmail($bdd, $table, $email)
+{
+    $query = "SELECT email FROM $table WHERE email LIKE :email";
+    $query = $bdd->prepare($query);
+    $query->bindValue('email', $email, PDO::PARAM_STR);
+    $query->execute();
+    $data = $query->fetch();
+    return $data;
+}
+
+//function to subscribe on website
+
+function subscribe($bdd, $table, $name, $firstName, $email, $hash, $role)
+{
+    $query = "insert into $table (name, firstName, email, password, role_id) values (:name, :firstName, :email, :password, :role_id)";
+    $req = $bdd->prepare($query);
+    $req->bindValue(':name', $name, PDO::PARAM_STR);
+    $req->bindValue(':firstName', $firstName, PDO::PARAM_STR);
+    $req->bindValue(':email', $email, PDO::PARAM_STR);
+    $req->bindValue(':password', $hash, PDO::PARAM_STR);
+    $req->bindValue(':role_id', $role, PDO::PARAM_INT);
+    $req->execute();
+}

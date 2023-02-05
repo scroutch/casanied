@@ -5,7 +5,7 @@ require '../models/functions.php';
 
 if (isset($_POST['id']) && !empty($_POST['id'])) {
     $id = strip_tags($_POST['id']);
-    $table = "admin";
+    $table = "membre";
     delete($bdd, $table, $id);
     $_SESSION['error'] = '<div class="alert alert-success text-center" role="alert"><i class="fa-solid fa-check me-3"></i>Le collaborateur a bien été supprimé</div>';
 } else {
