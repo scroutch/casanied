@@ -52,7 +52,6 @@ require '../models/bdd.php';
     <script src="./assets/bootstrap-5.2.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     <script src="./assets/js/menuBurger.js"></script>
-    <script src="./assets/js/langage.js"></script>
     <script src="./assets/js/onglet.js"></script>
     <script src="./assets/js/map.js"></script>
 </body>
