@@ -1,15 +1,7 @@
 <?php
-
-
 require '../controlers/homeControler.php';
-
 include('onglet.php');
-// var_dump($_SESSION);
 
-?>
-
-
-<?php
 if (isset($dataSearch) && $dataSearch != NULL) {
 ?>
     <h2>Résultat de votre recherche</h2>
@@ -39,7 +31,7 @@ if (isset($dataSearch) && $dataSearch != NULL) {
                     </p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                    <a href="pages/ficheProduit.php">En savoir plus</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $product['id'] ?>">En savoir plus</a>
                     <a href="index.php?page=4"><i class="fa-regular fa-envelope p-2"></i></a>
                     <!-- <i class="fa-regular fa-heart p-2"></i> -->
                 </div>
@@ -49,7 +41,7 @@ if (isset($dataSearch) && $dataSearch != NULL) {
         ?>
     </div>
 <?php
-} else {
+} else if (isset($dataProduct) && $dataProduct != NULL) {
 ?>
     <h2>Nos dernières offres</h2>
     <div class="container-fluid d-flex justify-content-evenly flex-wrap">
@@ -69,7 +61,7 @@ if (isset($dataSearch) && $dataSearch != NULL) {
                     </p>
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
-                    <a href="pages/ficheProduit.php">En savoir plus</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $product['id'] ?>">En savoir plus</a>
                     <a href="index.php?page=4"><i class="fa-regular fa-envelope p-2"></i></a>
                     <!-- <i class="fa-regular fa-heart p-2"></i> -->
                 </div>

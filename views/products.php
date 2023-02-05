@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div class="card-footer d-flex justify-content-between align-items-center">
-                <a href="pages/ficheProduit.php">En savoir plus</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $product['id'] ?>">En savoir plus</a>
                 <a href="index.php?page=5"><i class="fa-regular fa-envelope p-2"></i></a>
                 <!-- <i class="fa-regular fa-heart p-2"></i> -->
             </div>

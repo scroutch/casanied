@@ -62,17 +62,18 @@ require '../models/functions.php';
 
 <div class="row">
     <div class="col-lg-6 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-baseline mb-2">
-                    <h6 class="card-title mb-0">Inbox</h6>
-                </div>
-                <?php
-                $dataContact = listMessage($bdd, $table3);
-                foreach ($dataContact as $data) {
-                ?>
+        <?php
+        $dataContact = listMessage($bdd, $table3);
+        foreach ($dataContact as $data) {
+            include('modalMess.php');
+        ?>
+            <div class="card m-2">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline mb-2">
+                        <h6 class="card-title mb-0">Inbox</h6>
+                    </div>
                     <div class="d-flex flex-column">
-                        <a href="#" class="d-flex align-items-center border-bottom pb-3">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $data['id'] ?>" class="d-flex align-items-center border-bottom pb-3">
                             <div class="w-100">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="text-body mb-2"><?php echo $data['name'] . " " . $data['firstName']; ?></h6>
@@ -83,10 +84,10 @@ require '../models/functions.php';
                         </a>
                     </div>
                 <?php
-                }
+            }
                 ?>
+                </div>
             </div>
-        </div>
     </div>
 </div>
 

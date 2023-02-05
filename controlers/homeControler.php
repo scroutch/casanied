@@ -3,8 +3,6 @@
 require '../models/bdd.php';
 require '../models/function_search.php';
 
-//pensez à inclure l'onglet
-
 if ((isset($_POST['ville']) && $_POST['ville'] != null) &&
     (isset($_POST['type_product']) && $_POST['type_product'] != null) &&
     (isset($_POST['nb_bedroom']) && $_POST['nb_bedroom'] != null)
