@@ -29,6 +29,10 @@
     display: none;
 }
 
+.updateIMG {
+    width: 400px;
+}
+
 @media screen and (max-width: 900px) {
     .visible {
         display: block;

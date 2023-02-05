@@ -42,7 +42,7 @@ require '../models/functions.php';
         </div>
         <div class="form-group">
             <label for="cp">Code postal</label>
-            <input type="text" class="form-control" id="cp" name="cp" placeholder="Code postal" value="<?php echo isset($id) ? $data['code_postal'] : "" ?>" required>
+            <input type="text" pattern="[0-9]{5}" class="form-control" id="cp" name="cp" placeholder="Code postal" value="<?php echo isset($id) ? $data['code_postal'] : "" ?>" required>
         </div>
         <div class="form-group">
             <label for="ville">Ville</label>
@@ -50,16 +50,16 @@ require '../models/functions.php';
         </div>
         <div class="form-group">
             <label for="nb_bedroom">Nombre de chambre</label>
-            <input type="number" class="form-control" id="nb_bedroom" name="nb_bedroom" min="0" max="50" value="<?php echo isset($id) ? $data['nb_bedroom'] : "" ?>">
+            <input type="number" pattern="[0-9]{1,2}" class="form-control" id="nb_bedroom" name="nb_bedroom" min="0" max="50" value="<?php echo isset($id) ? $data['nb_bedroom'] : "" ?>">
 
         </div>
         <div class="form-group">
             <label for="nb_bathroom">Nombre de salle de bain</label>
-            <input type="number" class="form-control" id="nb_bathroom" name="nb_bathroom" min="0" max="50" value="<?php echo isset($id) ? $data['nb_bathroom'] : "" ?>">
+            <input type="number" pattern="[0-9]{1,2}" class="form-control" id="nb_bathroom" name="nb_bathroom" min="0" max="50" value="<?php echo isset($id) ? $data['nb_bathroom'] : "" ?>">
         </div>
         <div class="form-group">
             <label for="Surface">Superficie</label>
-            <input type="text" class="form-control" id="Surface" name="Surface" autocomplete="off" placeholder="Superficie" value="<?php echo isset($id) ? $data['surface'] : "" ?>" required>
+            <input type="text" class="form-control" pattern="[0-9]{2,5}" id="Surface" name="Surface" autocomplete="off" placeholder="Superficie" value="<?php echo isset($id) ? $data['surface'] : "" ?>" required>
         </div>
         <div class="form-group">
             <label for="type_product">Type de bien</label>
@@ -73,7 +73,7 @@ require '../models/functions.php';
         </div>
         <div class="form-group">
             <label for="price">Prix</label>
-            <input type="text" class="form-control" id="price" name="price" autocomplete="off" placeholder="Prix" value="<?php echo isset($id) ? $data['price'] : "" ?>" required>
+            <input type="text" pattern="[0-9]{1,10}" class="form-control" id="price" name="price" autocomplete="off" placeholder="Prix" value="<?php echo isset($id) ? $data['price'] : "" ?>" required>
         </div>
         <div class="form-group">
             <label for="category">Catégories</label>
