@@ -60,6 +60,6 @@ require '../models/functions.php';
                                         } ?></small>
         </div>
         <button type="submit" class="btn btn-primary mr-2" name="submit">Ajouter</button>
-        <button class="btn btn-light">Annuler</button>
+        <input type="text" class="btn btn-secondary" onclick="history.back()" value="annuler"></input>
     </form>
 </div>

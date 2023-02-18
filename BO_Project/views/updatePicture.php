@@ -31,6 +31,6 @@ require '../models/functions.php';
         </div>
         <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>">
         <button type="submit" class="btn btn-secondary mr-2">Modifier</button>
-        <button class="btn btn-light">Annuler</button>
+        <input type="text" class="btn btn-light" onclick="history.back()" value="annuler"></input>
     </form>
 </div>

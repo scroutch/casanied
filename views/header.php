@@ -7,7 +7,7 @@
         </button>
     </div>
     <div class="img">
-        <img src="../public/assets/img/logo_header.png" alt="">
+        <img src="../public/assets/img/logo_header.png" alt="logo de l'agence">
     </div>
     <nav>
         <ul id="menu-navigation" class="itemsmenu">

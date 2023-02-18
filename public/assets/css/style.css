@@ -99,16 +99,6 @@ header .secondary-menu {
     justify-content: end;
 }
 
-/* header .frenchFlag,
-header .germanFlag {
-    display: none;
-}
-
-header .frenchFlag.active,
-header .germanFlag.active {
-    display: block;
-} */
-
 header .btn.btn-outline-secondary {
     color: var(--secondary-color);
     border: none;

@@ -96,6 +96,6 @@ require '../models/functions.php';
             </select>
         </div>
         <button type="submit" class="btn btn-primary mr-2" href="../public/admin.php?page=4"><?php echo isset($_POST['id']) ? "Modifier" : "Ajouter" ?></button>
-        <button class="btn btn-light">Annuler</button>
+        <input type="text" class="btn btn-light" onclick="history.back()" value="annuler"></input>
     </form>
 </div>
