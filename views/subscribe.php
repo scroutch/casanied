@@ -56,7 +56,7 @@ require '../controlers/subscribeControler.php';
                                             unset($_SESSION['error_confirPassword']);
                                         } ?></small>
         </div>
-        <input type="submit" class="btn btn-primary" name="submit"></input>
+        <input type="submit" class="btn btn-primary" name="submit" value="S'inscrire"></input>
     </form>
     <div class="text-center mt-3">
         <a href="index.php?page=5">Déjà inscrit? Connectez-vous !</a>

@@ -59,7 +59,7 @@ require '../models/functions.php';
                                             unset($_SESSION['error_confirPassword']);
                                         } ?></small>
         </div>
-        <button type="submit" class="btn btn-primary mr-2" name="submit">Ajouter</button>
-        <input type="text" class="btn btn-secondary" onclick="history.back()" value="annuler"></input>
+        <input type="submit" class="btn btn-primary mr-2" name="submit" value="ajouter"></input>
+        <input type="text" class="btn btn-light" onclick="history.back()" value="annuler"></input>
     </form>
 </div>

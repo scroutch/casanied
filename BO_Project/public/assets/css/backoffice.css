@@ -3,6 +3,17 @@
     --secondary-color: #016450;
 }
 
+.btn.btn-primary {
+    background-color: var(--main-color);
+    width: 10em;
+    height: 35px;
+    border: none;
+}
+
+.btn.btn-primary:hover {
+    border: 2px solid var(--secondary-color);
+}
+
 .feather {
     color: var(--secondary-color);
 }

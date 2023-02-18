@@ -30,7 +30,7 @@ require '../models/functions.php';
             <input type="file" class="form-control" id="img" name="img" autocomplete="off">
         </div>
         <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>">
-        <button type="submit" class="btn btn-secondary mr-2">Modifier</button>
+        <input type="submit" class="btn btn-primary mr-2" value="modifier"></input>
         <input type="text" class="btn btn-light" onclick="history.back()" value="annuler"></input>
     </form>
 </div>

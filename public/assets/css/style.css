@@ -46,6 +46,17 @@ h2 {
     min-height: 100vh;
 }
 
+.btn.btn-primary {
+    background-color: var(--main-color);
+    width: 10em;
+    height: 35px;
+    border: none;
+}
+
+.btn.btn-primary:hover {
+    border: 2px solid var(--secondary-color);
+}
+
 /***HEADER***/
 
 header {
@@ -366,6 +377,10 @@ input[type="checkbox"].checkbox:checked::before {
     color: #fff;
     font-weight: 600;
     border: none;
+}
+
+#contact input[type="submit"]:hover {
+    border: 2px solid var(--secondary-color);
 }
 
 /***CAPTCHA***/
