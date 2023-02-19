@@ -77,11 +77,11 @@ function updateProd($bdd, $table, $title, $description, $rue, $cp, $ville, $nb_b
     $req->bindValue(':rue', $rue, PDO::PARAM_STR);
     $req->bindValue(':code_postal', $cp, PDO::PARAM_STR);
     $req->bindValue(':ville', $ville, PDO::PARAM_STR);
-    $req->bindValue(':nb_bedroom', $nb_bedroom, PDO::PARAM_STR);
-    $req->bindValue(':nb_bathroom', $nb_bathroom, PDO::PARAM_STR);
-    $req->bindValue(':surface', $surface, PDO::PARAM_STR);
+    $req->bindValue(':nb_bedroom', $nb_bedroom, PDO::PARAM_INT);
+    $req->bindValue(':nb_bathroom', $nb_bathroom, PDO::PARAM_INT);
+    $req->bindValue(':surface', $surface, PDO::PARAM_INT);
     $req->bindValue(':type_product', $type_product, PDO::PARAM_STR);
-    $req->bindValue(':price', $price, PDO::PARAM_STR);
+    $req->bindValue(':price', $price, PDO::PARAM_INT);
     $req->bindValue(':category', $category, PDO::PARAM_INT);
     $req->execute();
 }
@@ -98,11 +98,11 @@ function addProd($bdd, $table, $title, $description, $rue, $cp, $ville, $nb_bedr
     $req->bindValue(':rue', $rue, PDO::PARAM_STR);
     $req->bindValue(':code_postal', $cp, PDO::PARAM_STR);
     $req->bindValue(':ville', $ville, PDO::PARAM_STR);
-    $req->bindValue(':nb_bedroom', $nb_bedroom, PDO::PARAM_STR);
-    $req->bindValue(':nb_bathroom', $nb_bathroom, PDO::PARAM_STR);
-    $req->bindValue(':surface', $surface, PDO::PARAM_STR);
+    $req->bindValue(':nb_bedroom', $nb_bedroom, PDO::PARAM_INT);
+    $req->bindValue(':nb_bathroom', $nb_bathroom, PDO::PARAM_INT);
+    $req->bindValue(':surface', $surface, PDO::PARAM_INT);
     $req->bindValue(':type_product', $type_product, PDO::PARAM_STR);
-    $req->bindValue(':price', $price, PDO::PARAM_STR);
+    $req->bindValue(':price', $price, PDO::PARAM_INT);
     $req->bindValue(':category', $category, PDO::PARAM_INT);
     $req->execute();
 }
