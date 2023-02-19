@@ -95,6 +95,9 @@ require '../models/functions.php';
                 <option value="2">Ventes</option>
             </select>
         </div>
+        <?php if (isset($_POST['id'])) { ?>
+            <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>">
+        <?php } ?>
         <button type="submit" class="btn btn-primary mr-2" href="../public/admin.php?page=4"><?php echo isset($_POST['id']) ? "Modifier" : "Ajouter" ?></button>
         <input type="text" class="btn btn-light" onclick="history.back()" value="annuler"></input>
     </form>
